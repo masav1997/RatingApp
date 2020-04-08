@@ -1,23 +1,21 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-function HomeScreen() {
-	return (
-		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-			<Text>Home Screen</Text>
-		</View>
-	);
-}
+import SignInShop from './screens/Authorization/SignIn/SignInShop'
 
 const Stack = createStackNavigator();
 
 function App() {
 	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen name="Home" component={HomeScreen} />
+		<NavigationContainer style={{backgroundColor: '#5227D0'}}>
+			<StatusBar barStyle="light-content" />
+			<Stack.Navigator
+				screenOptions={{
+					headerShown: false,
+				}}
+			>
+				<Stack.Screen name="SignInShop" component={SignInShop} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
