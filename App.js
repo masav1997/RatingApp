@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SignInShop from './screens/Authorization/SignIn/SignInShop'
+import SignUpShop from './screens/Authorization/SignUp/SignUpShop'
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ function App() {
 				}}
 			>
 				<Stack.Screen name="SignInShop" component={SignInShop} />
+				<Stack.Screen name="SignUpShop" component={SignUpShop} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
