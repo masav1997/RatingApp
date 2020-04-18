@@ -6,7 +6,8 @@ export default class Title extends React.Component {
 		const { subtitle, linkTitle, boldTitle, onPress } = this.props;
 		const descriptionStyle = {
 			marginBottom: 30,
-			alignSelf:'center'
+			alignSelf:'center',
+			textAlign: 'center'
 		};
 		const descriptionTextStyle = {
 			fontStyle: 'normal',
@@ -15,6 +16,7 @@ export default class Title extends React.Component {
 			marginTop: 5,
 			fontWeight: '500',
 			color: '#B5BBC9',
+			textAlign: 'center'
 		};
 		const descriptionTextLinkStyle = {
 			fontStyle: 'normal',

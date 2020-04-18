@@ -62,7 +62,7 @@ export default class SignInShop extends React.Component {
 								</Text>
 							</TouchableOpacity>
 							<Button
-								buttonTitle="Зарегистрироваться"
+								buttonTitle="Войти"
 								onPress={() => this.props.navigation.navigate('SignUpShop')}
 							/>
 							<Title
