@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Dimensions, SafeAreaView, StatusBar, ScrollView, Text } from 'react-native';
+import { View, Dimensions, SafeAreaView, StatusBar, ScrollView, Text, TouchableOpacity } from 'react-native';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -10,7 +10,6 @@ import BackIcon from '../../components/BackIcon';
 const { width, height } = Dimensions.get('window');
 
 export default class Code extends React.Component {
-
 	render() {
 		return (
 			<View
@@ -18,15 +17,19 @@ export default class Code extends React.Component {
 					backgroundColor: '#5227D0',
 					height: '100%',
 					width: width,
-					paddingLeft: 20,
-					paddingRight: 20,
 					alignItems: 'center',
 				}}
 			>
 				<StatusBar barStyle="light-content" />
 				<Header
 					center={<HeaderTitle title="Код восстановления" />}
-					left={<BackIcon onPress={() => this.props.navigation.goBack()} />}
+					left={
+						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
+								<BackIcon />
+							</View>
+						</TouchableOpacity>
+					}
 				/>
 				<SafeAreaView>
 					<View
@@ -42,7 +45,7 @@ export default class Code extends React.Component {
 						}}
 					>
 						<ScrollView style={{ padding: 20 }}>
-                        <Text style={{ fontSize: 13, textAlign: 'center', color: '#0D1F3C', marginBottom: 20 }}>
+							<Text style={{ fontSize: 13, textAlign: 'center', color: '#0D1F3C', marginBottom: 20 }}>
 								На вашу почту{' '}
 								<Text
 									style={{
@@ -65,10 +68,10 @@ export default class Code extends React.Component {
 								onPress={() => this.props.navigation.navigate('CreatePassword')}
 							/>
 							<Title
-									subtitle="Код не пришёл?"
-									linkTitle=" Выслать повторно."
-									onPress={() => this.props.navigation.navigate('SignInShop')}
-								/>
+								subtitle="Код не пришёл?"
+								linkTitle=" Выслать повторно."
+								onPress={() => this.props.navigation.navigate('SignInShop')}
+							/>
 						</ScrollView>
 					</View>
 				</SafeAreaView>

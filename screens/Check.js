@@ -15,15 +15,19 @@ export default class Check extends React.Component {
 					backgroundColor: '#5227D0',
 					height: '100%',
 					width: width,
-					paddingLeft: 20,
-					paddingRight: 20,
 					alignItems: 'center',
 				}}
 			>
 				<StatusBar barStyle="light-content" />
 				<Header
-					right={<NavIcon onPress={() => this.props.navigation.goBack()} />}
-					left={<BackIcon onPress={() => this.props.navigation.goBack()} />}
+					right={<TouchableOpacity onPress={this.toggleModal}><NavIcon onPress={() => this.props.navigation.goBack()} /></TouchableOpacity>}
+					left={
+						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
+								<BackIcon />
+							</View>
+						</TouchableOpacity>
+					}
 				/>
 
 				<SafeAreaView>
@@ -48,7 +52,7 @@ export default class Check extends React.Component {
 							<TextBlock title="Номер" text="121351" />
 							<TextBlock title="Дата" text="03 апреля 2020  19:45." />
 							<Text style={{ fontSize: 13, color: '#B5BBC9', fontWeight: '600' }}>Товары</Text>
-							<View style={{ flexDirection: 'row', marginBottom:10 }}>
+							<View style={{ flexDirection: 'row', marginBottom: 10 }}>
 								<View style={{ flex: 1 }}>
 									<Text style={{ fontSize: 16, color: '#0D1F3C' }}>Товар №1</Text>
 								</View>
@@ -65,7 +69,7 @@ export default class Check extends React.Component {
 									</Text>
 								</View>
 							</View>
-							<View style={{ flexDirection: 'row', marginBottom:10 }}>
+							<View style={{ flexDirection: 'row', marginBottom: 10 }}>
 								<View style={{ flex: 1 }}>
 									<Text style={{ fontSize: 16, color: '#0D1F3C' }}>Товар №2</Text>
 								</View>
@@ -82,7 +86,7 @@ export default class Check extends React.Component {
 									</Text>
 								</View>
 							</View>
-							<View style={{ flexDirection: 'row', marginBottom:10 }}>
+							<View style={{ flexDirection: 'row', marginBottom: 10 }}>
 								<View style={{ flex: 1 }}>
 									<Text style={{ fontSize: 16, color: '#0D1F3C' }}>Товар №3</Text>
 								</View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 
 export default class Header extends React.Component {
 	render() {
@@ -9,7 +9,6 @@ export default class Header extends React.Component {
 			flexDirection: 'row',
 			alignItems: 'center',
 			justifyContent: 'center',
-			marginBottom: 10
 		};
 		const leftStyle = {
 			flex: 1,
@@ -28,7 +27,7 @@ export default class Header extends React.Component {
 					{left}
 				</View>
 				<View style={centerStyle}>{center}</View>
-				<View style={rightStyle}>{right}</View>
+				<TouchableOpacity style={rightStyle}>{right}</TouchableOpacity>
 			</View>
 		);
 	}

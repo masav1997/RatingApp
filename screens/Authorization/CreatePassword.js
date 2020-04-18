@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Dimensions, SafeAreaView, StatusBar, ScrollView } from 'react-native';
+import { View, Dimensions, SafeAreaView, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import ViewIcon from '../../components/ViewIcon';
@@ -22,15 +22,19 @@ export default class CreatePassword extends React.Component {
 					backgroundColor: '#5227D0',
 					height: '100%',
 					width: width,
-					paddingLeft: 20,
-					paddingRight: 20,
 					alignItems: 'center',
 				}}
 			>
 				<StatusBar barStyle="light-content" />
 				<Header
 					center={<HeaderTitle title="Новый пароль" />}
-					left={<BackIcon onPress={() => this.props.navigation.goBack()} />}
+					left={
+						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
+								<BackIcon/>
+							</View>
+						</TouchableOpacity>
+					}
 				/>
 				<SafeAreaView>
 					<View
@@ -46,9 +50,7 @@ export default class CreatePassword extends React.Component {
 						}}
 					>
 						<ScrollView style={{ padding: 20 }}>
-							<SubTitle
-								subtitle="Введите новый пароль. Он должен отличаться от того, что был ранее"
-							/>
+							<SubTitle subtitle="Введите новый пароль. Он должен отличаться от того, что был ранее" />
 							<Input
 								placeholder="Пароль"
 								icon={<ViewIcon onPress={() => this.setState({ press: !this.state.press })} />}

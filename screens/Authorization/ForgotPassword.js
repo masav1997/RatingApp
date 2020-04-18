@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Dimensions, SafeAreaView, StatusBar, ScrollView } from 'react-native';
+import { View, Dimensions, SafeAreaView, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -10,7 +10,6 @@ import BackIcon from '../../components/BackIcon';
 const { width, height } = Dimensions.get('window');
 
 export default class ForgotPassword extends React.Component {
-
 	render() {
 		return (
 			<View
@@ -18,15 +17,19 @@ export default class ForgotPassword extends React.Component {
 					backgroundColor: '#5227D0',
 					height: '100%',
 					width: width,
-					paddingLeft: 20,
-					paddingRight: 20,
 					alignItems: 'center',
 				}}
 			>
 				<StatusBar barStyle="light-content" />
 				<Header
 					center={<HeaderTitle title="Забыли пароль?" />}
-					left={<BackIcon onPress={() => this.props.navigation.goBack()} />}
+					left={
+						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
+								<BackIcon />
+							</View>
+						</TouchableOpacity>
+					}
 				/>
 				<SafeAreaView>
 					<View
@@ -44,10 +47,7 @@ export default class ForgotPassword extends React.Component {
 						<ScrollView style={{ padding: 20 }}>
 							<SubTitle subtitle="На вашу почту будет выслан код для восстановление пароля" />
 							<Input label="Эл.почта" placeholder="Почта" />
-							<Button
-								buttonTitle="Далее"
-								onPress={() => this.props.navigation.navigate('Code')}
-							/>
+							<Button buttonTitle="Далее" onPress={() => this.props.navigation.navigate('Code')} />
 						</ScrollView>
 					</View>
 				</SafeAreaView>

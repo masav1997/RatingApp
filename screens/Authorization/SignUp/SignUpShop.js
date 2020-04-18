@@ -26,7 +26,13 @@ export default class SignUpShop extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header center={<HeaderTitle title="Регистрация" />} />
+				<Header
+					center={
+						<View style={{ marginBottom: 10 }}>
+							<HeaderTitle title="Регистрация" />
+						</View>
+					}
+				/>
 				<SafeAreaView>
 					<View
 						style={{
@@ -52,13 +58,13 @@ export default class SignUpShop extends React.Component {
 								icon={<ViewIcon onPress={() => this.setState({ press1: !this.state.press1 })} />}
 								secureTextEntry={this.state.press1 ? false : true}
 							/>
-							<Button buttonTitle="Зарегистрироваться"/>
+							<Button buttonTitle="Зарегистрироваться" />
 							<Title
-									title="Регистрация"
-									subtitle="Уже есть аккаунт?"
-									linkTitle=" Авторизироваться."
-									onPress={() => this.props.navigation.navigate('SignInShop')}
-								/>
+								title="Регистрация"
+								subtitle="Уже есть аккаунт?"
+								linkTitle=" Авторизироваться."
+								onPress={() => this.props.navigation.navigate('SignInShop')}
+							/>
 						</ScrollView>
 					</View>
 				</SafeAreaView>

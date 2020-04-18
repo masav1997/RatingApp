@@ -25,7 +25,13 @@ export default class SignInShop extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header center={<HeaderTitle title="Авторизация" />} />
+				<Header
+					center={
+						<View style={{ marginBottom: 10 }}>
+							<HeaderTitle title="Авторизация" />
+						</View>
+					}
+				/>
 				<SafeAreaView>
 					<View
 						style={{
@@ -55,16 +61,13 @@ export default class SignInShop extends React.Component {
 										textAlign: 'right',
 										fontWeight: '500',
 										color: '#5227D0',
-										marginTop: -10
+										marginTop: -10,
 									}}
 								>
 									Забыли пароль?
 								</Text>
 							</TouchableOpacity>
-							<Button
-								buttonTitle="Войти"
-								onPress={() => this.props.navigation.navigate('SignUpShop')}
-							/>
+							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('SignUpShop')} />
 							<Title
 								subtitle="Ещё нет аккаунта?"
 								linkTitle=" Зарегистрироваться."
