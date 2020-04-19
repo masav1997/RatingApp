@@ -74,12 +74,12 @@ export default class ProfileCompany1 extends React.Component {
 								image={require('../assets/icons/avatar.png')}
 							/>
 							<TextBlock title="Оценка" text="4.7 из 5.0" />
-							<ProgressBar mark="5" color="#1CB703" progress="100%" count="18"/>
-							<ProgressBar mark="4" color="#75D654" progress="80%" count="10"/>
-							<ProgressBar mark="3" color="#F2C525" progress="35%" count="4"/>
-							<ProgressBar mark="2" color="#FF984D" progress="5%" count="0"/>
-							<ProgressBar mark="1" color="#FF4D5B" progress="5%" count="0"/>
-							<View style={{marginBottom:10}}/>
+							<ProgressBar mark="5" color="#1CB703" progress="100%" count="18" />
+							<ProgressBar mark="4" color="#75D654" progress="80%" count="10" />
+							<ProgressBar mark="3" color="#F2C525" progress="35%" count="4" />
+							<ProgressBar mark="2" color="#FF984D" progress="5%" count="0" />
+							<ProgressBar mark="1" color="#FF4D5B" progress="5%" count="0" />
+							<View style={{ marginBottom: 10 }} />
 							<TextBlock title="Всего отзывов" text="184" />
 						</ScrollView>
 					</View>
@@ -172,6 +172,10 @@ export default class ProfileCompany1 extends React.Component {
 								marginTop: 10,
 								alignSelf: 'center',
 							}}
+							onPress={() => {
+								this.props.navigation.navigate('Filters');
+								this.hideDrawer();
+							}}
 						>
 							<View style={{ flex: 1 }}>
 								<Image
@@ -197,6 +201,10 @@ export default class ProfileCompany1 extends React.Component {
 								marginBottom: 20,
 								marginTop: 10,
 								alignSelf: 'center',
+							}}
+							onPress={() => {
+								this.props.navigation.navigate('MyCompany');
+								this.hideDrawer();
 							}}
 						>
 							<View style={{ flex: 1 }}>
@@ -224,6 +232,10 @@ export default class ProfileCompany1 extends React.Component {
 								marginTop: 10,
 								alignSelf: 'center',
 							}}
+							onPress={() => {
+								this.props.navigation.navigate('Settings');
+								this.hideDrawer();
+							}}
 						>
 							<View style={{ flex: 1 }}>
 								<Image
@@ -249,6 +261,10 @@ export default class ProfileCompany1 extends React.Component {
 								marginBottom: 20,
 								marginTop: width / 2,
 								alignSelf: 'center',
+							}}
+							onPress={() => {
+								this.props.navigation.navigate('SignInShop');
+								this.hideDrawer();
 							}}
 						>
 							<View style={{ flex: 1 }}>

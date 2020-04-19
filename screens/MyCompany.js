@@ -183,18 +183,19 @@ export default class MyCompany extends React.Component {
 									this.props.navigation.navigate('Profile');
 									this.hideDrawer();
 								}}
+								onPress={() => {this.props.navigation.navigate('Profile'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
 										source={require('../assets/icons/contacts.png')}
-										style={{ width: 17, height: 19, tintColor: '#5227D0' }}
+										style={{ width: 17, height: 19, tintColor: '#CBD0DB' }}
 									/>
 								</View>
 								<View style={{ flex: 4 }}>
 									<Text
 										style={{
 											fontSize: 16,
-											color: '#5227D0',
+											color: '#0D1F3C',
 											textAlign: 'left',
 										}}
 									>
@@ -209,6 +210,7 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
+								onPress={() => {this.props.navigation.navigate('Filters'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -235,18 +237,19 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
+								onPress={() => {this.props.navigation.navigate('MyCompany'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
 										source={require('../assets/icons/companies.png')}
-										style={{ width: 22, height: 22, tintColor: '#CBD0DB' }}
+										style={{ width: 22, height: 22, tintColor: '#5227D0' }}
 									/>
 								</View>
 								<View style={{ flex: 4 }}>
 									<Text
 										style={{
 											fontSize: 16,
-											color: '#0D1F3C',
+											color: '#5227D0',
 											textAlign: 'left',
 										}}
 									>
@@ -261,6 +264,7 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
+								onPress={() => {this.props.navigation.navigate('Settings'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -287,6 +291,7 @@ export default class MyCompany extends React.Component {
 									marginTop: width / 2,
 									alignSelf: 'center',
 								}}
+								onPress={() => {this.props.navigation.navigate('SignInShop'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

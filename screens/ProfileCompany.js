@@ -195,6 +195,10 @@ export default class ProfileCompany extends React.Component {
 								marginTop: 10,
 								alignSelf: 'center',
 							}}
+							onPress={() => {
+								this.props.navigation.navigate('Filters');
+								this.hideDrawer();
+							}}
 						>
 							<View style={{ flex: 1 }}>
 								<Image
@@ -220,6 +224,10 @@ export default class ProfileCompany extends React.Component {
 								marginBottom: 20,
 								marginTop: 10,
 								alignSelf: 'center',
+							}}
+							onPress={() => {
+								this.props.navigation.navigate('MyCompany');
+								this.hideDrawer();
 							}}
 						>
 							<View style={{ flex: 1 }}>
@@ -247,6 +255,10 @@ export default class ProfileCompany extends React.Component {
 								marginTop: 10,
 								alignSelf: 'center',
 							}}
+							onPress={() => {
+								this.props.navigation.navigate('Settings');
+								this.hideDrawer();
+							}}
 						>
 							<View style={{ flex: 1 }}>
 								<Image
@@ -272,6 +284,10 @@ export default class ProfileCompany extends React.Component {
 								marginBottom: 20,
 								marginTop: width / 2,
 								alignSelf: 'center',
+							}}
+							onPress={() => {
+								this.props.navigation.navigate('SignInShop');
+								this.hideDrawer();
 							}}
 						>
 							<View style={{ flex: 1 }}>
