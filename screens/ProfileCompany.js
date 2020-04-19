@@ -7,7 +7,7 @@ import TextBlock from '../components/TextBlock';
 
 const { width, height } = Dimensions.get('window');
 
-export default class Check extends React.Component {
+export default class ProfileCompany extends React.Component {
 	render() {
 		return (
 			<View

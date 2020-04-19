@@ -145,6 +145,7 @@ export default class MainPage extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
+								onPress={() => {this.props.navigation.navigate('ProfileCompany'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

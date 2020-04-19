@@ -10,6 +10,9 @@ import MainPage from './screens/Settings/MainPage';
 import About from './screens/Settings/About';
 import Code from './screens/Authorization/Code';
 import Check from './screens/Check';
+import Profile from './screens/Profile';
+import Profile1 from './screens/Profile1';
+import ProfileCompany from './screens/ProfileCompany';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +33,9 @@ function App() {
 				<Stack.Screen name="About" component={About} />
 				<Stack.Screen name="Code" component={Code} />
 				<Stack.Screen name="Check" component={Check} />
+				<Stack.Screen name="Profile" component={Profile} />
+				<Stack.Screen name="Profile1" component={Profile1} />
+				<Stack.Screen name="ProfileCompany" component={ProfileCompany} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
