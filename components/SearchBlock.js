@@ -3,7 +3,7 @@ import { View, TextInput, Image } from 'react-native';
 
 export default class SearchBlock extends React.Component {
 	render() {
-		const { title } = this.props;
+		const { title, filters } = this.props;
 
 		return (
 			<View
@@ -24,6 +24,12 @@ export default class SearchBlock extends React.Component {
 				</View>
 				<View style={{ flex: 11 }}>
 					<TextInput placeholder={title} placeholderTextColor={'#B5BBC9'} />
+				</View>
+				<View style={{ flex: 1 }}>
+					<Image
+						source={filters}
+						style={{ width: 19, height: 19, tintColor: '#CBD0DB', top: 5 }}
+					/>
 				</View>
 			</View>
 		);
