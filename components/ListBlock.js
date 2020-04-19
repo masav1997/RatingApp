@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 export default class ListBlock extends React.Component {
 	render() {
-		const { color, onPress, title, title1, subtitle1, image, mark } = this.props;
+		const { color, onPress, title, title1, subtitle1, image, mark, voice } = this.props;
 		const TextStyle = {
 			fontSize: 15,
 			color: '#9EA5B1',
@@ -42,6 +42,9 @@ export default class ListBlock extends React.Component {
 							{subtitle1}
 						</Text>
 					</View>
+					<View style={{ flex: 2 }}>
+						<Image source={voice} style={{ width: 18, height: 17, top:15 }} />
+					</View>
 					<View
 						style={{
 							flex: 2,
@@ -49,6 +52,7 @@ export default class ListBlock extends React.Component {
 							borderRadius: 13,
 							width: 32,
 							height: 32,
+							top:10
 						}}
 					>
 						<Text

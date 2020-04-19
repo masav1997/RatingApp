@@ -13,6 +13,7 @@ import Check from './screens/Check';
 import Profile from './screens/Profile';
 import Profile1 from './screens/Profile1';
 import ProfileCompany from './screens/ProfileCompany';
+import ProfileCompany1 from './screens/ProfileCompany1';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,7 @@ function App() {
 				<Stack.Screen name="Profile" component={Profile} />
 				<Stack.Screen name="Profile1" component={Profile1} />
 				<Stack.Screen name="ProfileCompany" component={ProfileCompany} />
+				<Stack.Screen name="ProfileCompany1" component={ProfileCompany1} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

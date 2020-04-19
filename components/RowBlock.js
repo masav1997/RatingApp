@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 export default class RowBlock extends React.Component {
 	render() {
-		const { row1, row2, row3, row4, row5, row6 } = this.props;
+		const { row1, row2, row3, row4, row5, row6, color } = this.props;
 
 		return (
 			<View
@@ -54,7 +54,7 @@ export default class RowBlock extends React.Component {
 					<Text
 						style={{
 							fontSize: 15,
-							color: '#0D1F3C',
+							color: color,
 							fontWeight: '700',
 							textAlign: 'center',
 						}}

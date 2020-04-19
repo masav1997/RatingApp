@@ -98,6 +98,7 @@ export default class Profile extends React.Component {
 								row4="3 года"
 								row5="Рейтинг"
 								row6="4.7 из 5.0"
+								color="#0D1F3C"
 							/>
 							<SearchBlock title="Поиск по названию и категории" />
 							<ListBlock
