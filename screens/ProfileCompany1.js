@@ -32,7 +32,7 @@ export default class ProfileCompany1 extends React.Component {
 					right={
 						<TouchableOpacity
 							onPress={this.hideDrawer}
-							style={{ width: 60, height: 40, bottom: 10, paddingRight: 20 }}
+							style={{ width: 100, height: 50, bottom: 10, paddingRight: 20 }}
 						>
 							<NavIcon onPress={this.hideDrawer} />
 						</TouchableOpacity>

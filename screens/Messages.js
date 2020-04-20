@@ -13,14 +13,13 @@ import {
 import Header from '../components/Header';
 import NavIcon from '../components/NavIcon';
 import BackIcon from '../components/BackIcon';
-import ListBlock from '../components/ListBlock';
-import RowBlock from '../components/RowBlock';
-import SearchBlock from '../components/SearchBlock';
+import TextBlock from '../components/TextBlock';
+import InfoBlock from '../components/InfoBlock';
 import Modal from 'react-native-modal';
 
 const { width, height } = Dimensions.get('window');
 
-export default class Profile extends React.Component {
+export default class Messages extends React.Component {
 	state = {
 		isDrawerVisible: false,
 	};
@@ -87,43 +86,28 @@ export default class Profile extends React.Component {
 						<Text style={{ textAlign: 'center', fontSize: 16, fontWeight: '700', bottom: 10 }}>
 							Ada Perry
 						</Text>
-						<Text style={{ textAlign: 'center', fontSize: 16, bottom: 10, color: '#B5BBC9' }}>
+						<Text
+							style={{
+								textAlign: 'center',
+								fontSize: 16,
+								bottom: 10,
+								color: '#B5BBC9',
+								marginBottom: 10,
+							}}
+						>
 							786-222-8410
 						</Text>
 						<ScrollView style={{ padding: 20, paddingTop: 0 }}>
-							<RowBlock
-								row1="Отзывов"
-								row2="184"
-								row3="На сервисе"
-								row4="3 года"
-								row5="Рейтинг"
-								row6="4.7 из 5.0"
-								color="#0D1F3C"
-							/>
-							<SearchBlock title="Поиск по названию и категории" />
-							<ListBlock
-								title="Топ рекомендаций"
+							<InfoBlock
 								title1="UKnow"
 								subtitle1="Мобильное приложение"
-								mark="3.0"
 								image={require('../assets/icons/avatar.png')}
-								color="#F2C525"
 							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="Мобильное приложение"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Pizza Hut"
-								subtitle1="Мобильное приложение"
-								mark="2.0"
-								image={require('../assets/icons/logo1.png')}
-								color="#F64A57"
+							<TextBlock title="Оценка" text="4.7 из 5.0" />
+							<TextBlock title="Дата" text="03 апреля 2020  19:45" />
+							<TextBlock
+								title="Текст отзыва"
+								text="Поначалу пицца в этом заведении показалась очень вкусной, но спустя несколько посещений стало ясно, что пицца-то очень тяжелая, на нижней части тесто все в масле, коробка вся пропитана маслом. Кроме того пицца на толстом тесте как правило имеет мало начинки. Сначала как-то этого не замечаешь, но потом видишь, что пицца сытная только за счет тяжелого толстого теста! Начинки мало, а цена высокая. Больше не ходим в пиццу хат."
 							/>
 						</ScrollView>
 					</View>

@@ -16,6 +16,7 @@ import ProfileCompany from './screens/ProfileCompany';
 import ProfileCompany1 from './screens/ProfileCompany1';
 import MyCompany from './screens/MyCompany';
 import Filters from './screens/Filters';
+import Messages from './screens/Messages';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ function App() {
 				<Stack.Screen name="ProfileCompany1" component={ProfileCompany1} />
 				<Stack.Screen name="MyCompany" component={MyCompany} />
 				<Stack.Screen name="Filters" component={Filters} />
+				<Stack.Screen name="Messages" component={Messages} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

@@ -63,7 +63,7 @@ export default class SignUpShop extends React.Component {
 								title="Регистрация"
 								subtitle="Уже есть аккаунт?"
 								linkTitle=" Авторизироваться."
-								onPress={() => this.props.navigation.navigate('SignInShop')}
+								onPress={() => this.props.navigation.navigate('Profile1')}
 							/>
 						</ScrollView>
 					</View>

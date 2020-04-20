@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, View } from 'react-native';
+import { Image} from 'react-native';
 
 export default class BackIcon extends React.Component {
 	render() {
