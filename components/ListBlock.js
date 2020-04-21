@@ -50,9 +50,10 @@ export default class ListBlock extends React.Component {
 							flex: 2,
 							backgroundColor: color,
 							borderRadius: 13,
-							width: 32,
+							width: 'auto',
 							height: 32,
-							top:10
+							top:10,
+							paddingHorizontal:3
 						}}
 					>
 						<Text

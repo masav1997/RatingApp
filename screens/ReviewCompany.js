@@ -13,7 +13,7 @@ import Input from '../components/Input';
 
 const { width, height } = Dimensions.get('window');
 
-export default class ProfileCompany extends React.Component {
+export default class ReviewCompany extends React.Component {
 	state = {
 		isDrawerVisible: false,
 		isModalVisible: false,
@@ -85,108 +85,106 @@ export default class ProfileCompany extends React.Component {
 								row6="256"
 								color="#5227D0"
 							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-								voice={require('../assets/icons/voice.png')}
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Ada Perry"
-								subtitle1="445-120-4592"
-								mark="4.0"
-								image={require('../assets/icons/avatar2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-								voice={require('../assets/icons/voice.png')}
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Ada Perry"
-								subtitle1="445-120-4592"
-								mark="4.0"
-								image={require('../assets/icons/avatar2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-								voice={require('../assets/icons/voice.png')}
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Flamp"
-								subtitle1="184 отзыва"
-								mark="4.7"
-								image={require('../assets/icons/logo2.png')}
-								color="#1CB703"
-							/>
-							<View style={{ marginBottom: -20 }} />
-							<ListBlock
-								title1="Ada Perry"
-								subtitle1="445-120-4592"
-								mark="4.0"
-								image={require('../assets/icons/avatar2.png')}
-								color="#1CB703"
-							/>
+							<View
+								style={{
+									height: 'auto',
+									borderBottomColor: '#CFD2D8',
+									borderBottomWidth: 1,
+									paddingBottom: 20,
+									marginLeft: 10,
+									marginRight: 10,
+									marginTop: -20,
+								}}
+							>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Ada Perry"
+									subtitle1="445-120-4592"
+									mark="4.0"
+									image={require('../assets/icons/avatar2.png')}
+									color="#1CB703"
+								/>
+							</View>
+							<View style={{paddingLeft: 10, paddingRight: 10}}>
+								<View style={{ marginBottom: -20,  }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+									voice={require('../assets/icons/voice.png')}
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Ada Perry"
+									subtitle1="445-120-4592"
+									mark="4.0"
+									image={require('../assets/icons/avatar2.png')}
+									color="#1CB703"
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+									voice={require('../assets/icons/voice.png')}
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Ada Perry"
+									subtitle1="445-120-4592"
+									mark="4.0"
+									image={require('../assets/icons/avatar2.png')}
+									color="#1CB703"
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+									voice={require('../assets/icons/voice.png')}
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Flamp"
+									subtitle1="184 отзыва"
+									mark="4.7"
+									image={require('../assets/icons/logo2.png')}
+									color="#1CB703"
+								/>
+								<View style={{ marginBottom: -20 }} />
+								<ListBlock
+									title1="Ada Perry"
+									subtitle1="445-120-4592"
+									mark="4.0"
+									image={require('../assets/icons/avatar2.png')}
+									color="#1CB703"
+								/>
+							</View>
 						</ScrollView>
 						<View style={{ flexDirection: 'row', position: 'absolute', paddingHorizontal: 15 }}>
 							<View style={{ flex: 5, marginRight: 5 }}>
-								<View
-									style={{
-										backgroundColor: '#5227D0',
-										borderRadius: 12,
-										width: '100%',
-										height: 50,
-										alignSelf: 'center',
-										marginBottom: 20,
-										marginTop: -120,
-									}}
-								>
-									<TouchableOpacity
-										style={{
-											width: '100%',
-											height: '100%',
-											display: 'flex',
-											justifyContent: 'center',
-											alignItems: 'center',
-										}}
-										onPress={this.toggleModal}
-									>
-										<Text style={{ color: '#FFFFFF', fontWeight: '600' }}>Оставить отзыв</Text>
-									</TouchableOpacity>
-								</View>
 							</View>
 							<View style={{ flex: 1 }}>
 								<View

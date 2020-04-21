@@ -22,6 +22,8 @@ import Contacts from './screens/Contacts';
 import ReviewVoice from './screens/ReviewVoice';
 import Scan from './screens/Scan';
 import EditProfile from './screens/EditProfile';
+import Search from './screens/Search';
+import ReviewCompany from './screens/ReviewCompany';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +56,8 @@ function App() {
 				<Stack.Screen name="ReviewVoice" component={ReviewVoice} />
 				<Stack.Screen name="Scan" component={Scan} />
 				<Stack.Screen name="EditProfile" component={EditProfile} />
+				<Stack.Screen name="Search" component={Search} />
+				<Stack.Screen name="ReviewCompany" component={ReviewCompany} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
