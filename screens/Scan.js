@@ -45,10 +45,8 @@ export default class Scan extends React.Component {
 				<Header
 					center={<HeaderTitle title="Сканирование" />}
 					left={
-						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
-								<BackIcon />
-							</View>
+						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}
 				/>

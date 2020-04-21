@@ -76,10 +76,8 @@ export default class Map extends React.Component {
 					right={<Text style={{ paddingRight: 20, fontSize: 11, color: '#FFF', textAlign:'center' }}>Применить</Text>}
 					center={<HeaderTitle title="Карта" />}
 					left={
-						<TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-							<View style={{ width: 60, height: 40, bottom: 10, paddingLeft: 20 }}>
-								<BackIcon />
-							</View>
+						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}
 				/>
