@@ -19,6 +19,7 @@ import Filters from './screens/Filters';
 import Messages from './screens/Messages';
 import Contacts from './screens/Contacts';
 import ReviewVoice from './screens/ReviewVoice';
+import Scan from './screens/Scan';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +49,7 @@ function App() {
 				<Stack.Screen name="Messages" component={Messages} />
 				<Stack.Screen name="Contacts" component={Contacts} />
 				<Stack.Screen name="ReviewVoice" component={ReviewVoice} />
+				<Stack.Screen name="Scan" component={Scan} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
