@@ -29,7 +29,7 @@ export default class SignUpShop extends React.Component {
 				<Header
 					center={
 						<View style={{ marginBottom: 10 }}>
-							<HeaderTitle title="Регистрация" />
+							<HeaderTitle title="Регистрация магазина" />
 						</View>
 					}
 				/>

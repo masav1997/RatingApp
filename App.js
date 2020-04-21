@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SignInShop from './screens/Authorization/SignIn/SignInShop';
 import SignUpShop from './screens/Authorization/SignUp/SignUpShop';
+import SignUpUser from './screens/Authorization/SignUp/SignUpUser';
 import ForgotPassword from './screens/Authorization/ForgotPassword';
 import CreatePassword from './screens/Authorization/CreatePassword';
 import MainPage from './screens/Settings/MainPage';
@@ -20,6 +21,7 @@ import Messages from './screens/Messages';
 import Contacts from './screens/Contacts';
 import ReviewVoice from './screens/ReviewVoice';
 import Scan from './screens/Scan';
+import EditProfile from './screens/EditProfile';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +36,7 @@ function App() {
 			>
 				<Stack.Screen name="SignInShop" component={SignInShop} />
 				<Stack.Screen name="SignUpShop" component={SignUpShop} />
+				<Stack.Screen name="SignUpUser" component={SignUpUser} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
 				<Stack.Screen name="CreatePassword" component={CreatePassword} />
 				<Stack.Screen name="MainPage" component={MainPage} />
@@ -50,6 +53,7 @@ function App() {
 				<Stack.Screen name="Contacts" component={Contacts} />
 				<Stack.Screen name="ReviewVoice" component={ReviewVoice} />
 				<Stack.Screen name="Scan" component={Scan} />
+				<Stack.Screen name="EditProfile" component={EditProfile} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

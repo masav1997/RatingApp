@@ -8,9 +8,10 @@ import HeaderTitle from '../../../components/HeaderTitle';
 import ViewIcon from '../../../components/ViewIcon';
 const { width, height } = Dimensions.get('window');
 
-export default class SignInShop extends React.Component {
+export default class SignUpShop extends React.Component {
 	state = {
 		press: false,
+		press1: false,
 	};
 	render() {
 		return (
@@ -28,7 +29,7 @@ export default class SignInShop extends React.Component {
 				<Header
 					center={
 						<View style={{ marginBottom: 10 }}>
-							<HeaderTitle title="Авторизация" />
+							<HeaderTitle title="Регистрация" />
 						</View>
 					}
 				/>
@@ -52,26 +53,17 @@ export default class SignInShop extends React.Component {
 								icon={<ViewIcon onPress={() => this.setState({ press: !this.state.press })} />}
 								secureTextEntry={this.state.press ? false : true}
 							/>
-							<TouchableOpacity onPress={() => this.props.navigation.navigate('ForgotPassword')}>
-								<Text
-									style={{
-										fontStyle: 'normal',
-										fontSize: 13,
-										lineHeight: 20,
-										textAlign: 'right',
-										fontWeight: '500',
-										color: '#5227D0',
-										marginTop: -10,
-									}}
-								>
-									Забыли пароль?
-								</Text>
-							</TouchableOpacity>
-							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('EditProfile')} />
+							<Input
+								placeholder="Повторите пароль"
+								icon={<ViewIcon onPress={() => this.setState({ press1: !this.state.press1 })} />}
+								secureTextEntry={this.state.press1 ? false : true}
+							/>
+							<Button buttonTitle="Зарегистрироваться" />
 							<Title
-								subtitle="Ещё нет аккаунта?"
-								linkTitle=" Зарегистрироваться."
-								onPress={() => this.props.navigation.navigate('SignUpShop')}
+								title="Регистрация"
+								subtitle="Уже есть аккаунт?"
+								linkTitle=" Авторизироваться."
+								onPress={() => this.props.navigation.navigate('Profile1')}
 							/>
 						</ScrollView>
 					</View>
