@@ -119,7 +119,7 @@ export default class EditProfile extends React.Component {
 									</TouchableOpacity>
 								}
 							/>
-							<Button buttonTitle="Далее" onPress={() => this.props.navigation.navigate('Code')} />
+							<Button buttonTitle="Далее" onPress={() => this.props.navigation.navigate('Search')} />
 						</ScrollView>
 					</View>
 				</SafeAreaView>

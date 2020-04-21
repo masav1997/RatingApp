@@ -63,6 +63,7 @@ export default class CheckList extends React.Component {
 							<SearchBlock
 								title="Поиск по телефону и имени"
 								filters={require('../assets/icons/filters.png')}
+								onPress={() => this.props.navigation.navigate('Filters')}
 							/>
 						</View>
 						<View style={{ marginLeft: 15, marginRight: 15, marginBottom: -20 }}>
@@ -152,6 +153,9 @@ export default class CheckList extends React.Component {
 									Обработка
 								</Text>
 							}
+							onPress={() => {
+								this.props.navigation.navigate('Check');
+							}}
 						/>
 						<View style={{ marginBottom: -20 }} />
 						<ListCheck
@@ -171,6 +175,9 @@ export default class CheckList extends React.Component {
 									Ожидание
 								</Text>
 							}
+							onPress={() => {
+								this.props.navigation.navigate('Check');
+							}}
 						/>
 						<View style={{ marginBottom: -20 }} />
 						<ListCheck
@@ -317,10 +324,6 @@ export default class CheckList extends React.Component {
 									this.props.navigation.navigate('Profile');
 									this.hideDrawer();
 								}}
-								onPress={() => {
-									this.props.navigation.navigate('Profile');
-									this.hideDrawer();
-								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -348,7 +351,7 @@ export default class CheckList extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Filters');
+									this.props.navigation.navigate('Search');
 									this.hideDrawer();
 								}}
 							>
@@ -408,7 +411,7 @@ export default class CheckList extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Settings');
+									this.props.navigation.navigate('MainPage');
 									this.hideDrawer();
 								}}
 							>

@@ -67,11 +67,11 @@ export default class SignInShop extends React.Component {
 									Забыли пароль?
 								</Text>
 							</TouchableOpacity>
-							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('Map')} />
+							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('Contacts')} />
 							<Title
 								subtitle="Ещё нет аккаунта?"
 								linkTitle=" Зарегистрироваться."
-								onPress={() => this.props.navigation.navigate('SignUpShop')}
+								onPress={() => this.props.navigation.navigate('SignUpUser')}
 							/>
 						</ScrollView>
 					</View>

@@ -106,6 +106,9 @@ export default class Profile extends React.Component {
 								mark="3.0"
 								image={require('../assets/icons/avatar.png')}
 								color="#F2C525"
+								onPress={() => {
+									this.props.navigation.navigate('ReviewCompany');
+								}}
 							/>
 							<View style={{ marginBottom: -20 }} />
 							<ListBlock
@@ -114,6 +117,9 @@ export default class Profile extends React.Component {
 								mark="4.7"
 								image={require('../assets/icons/logo2.png')}
 								color="#1CB703"
+								onPress={() => {
+									this.props.navigation.navigate('ReviewVoice');
+								}}
 							/>
 							<View style={{ marginBottom: -20 }} />
 							<ListBlock
@@ -213,7 +219,7 @@ export default class Profile extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Filters'); this.hideDrawer()}}
+								onPress={() => {this.props.navigation.navigate('Search'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -267,7 +273,7 @@ export default class Profile extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Settings'); this.hideDrawer()}}
+								onPress={() => {this.props.navigation.navigate('MainPage'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

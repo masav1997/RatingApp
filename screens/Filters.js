@@ -87,10 +87,6 @@ export default class Filters extends React.Component {
 						}}
 					>
 						<ScrollView style={{ padding: 20 }}>
-							<SearchBlock
-								title="Поиск по телефону и названию"
-								filters={require('../assets/icons/filters.png')}
-							/>
 							<Multislider title="Средняя оценка в каталогах"/>
 							<Multislider title="Средняя оценка на сервисе"/>
 							<RadioList PROP={PROP} title="Категория" />

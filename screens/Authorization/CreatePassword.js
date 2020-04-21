@@ -61,7 +61,7 @@ export default class CreatePassword extends React.Component {
 							/>
 							<Button
 								buttonTitle="Сохранить"
-								onPress={() => this.props.navigation.navigate('MainPage')}
+								onPress={() => this.props.navigation.navigate('SignUpShop')}
 							/>
 						</ScrollView>
 					</View>

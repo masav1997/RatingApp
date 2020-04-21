@@ -101,6 +101,7 @@ export default class ReviewCompany extends React.Component {
 									mark="4.0"
 									image={require('../assets/icons/avatar2.png')}
 									color="#1CB703"
+									onPress={() => this.props.navigation.navigate('Profile1')}
 								/>
 							</View>
 							<View style={{paddingLeft: 10, paddingRight: 10}}>
@@ -343,7 +344,7 @@ export default class ReviewCompany extends React.Component {
 								alignSelf: 'center',
 							}}
 							onPress={() => {
-								this.props.navigation.navigate('Filters');
+								this.props.navigation.navigate('Search');
 								this.hideDrawer();
 							}}
 						>
@@ -403,7 +404,7 @@ export default class ReviewCompany extends React.Component {
 								alignSelf: 'center',
 							}}
 							onPress={() => {
-								this.props.navigation.navigate('Settings');
+								this.props.navigation.navigate('MainPage');
 								this.hideDrawer();
 							}}
 						>

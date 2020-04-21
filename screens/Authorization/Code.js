@@ -68,7 +68,7 @@ export default class Code extends React.Component {
 							<Title
 								subtitle="Код не пришёл?"
 								linkTitle=" Выслать повторно."
-								onPress={() => this.props.navigation.navigate('SignInShop')}
+								onPress={() => this.props.navigation.navigate('Code')}
 							/>
 						</ScrollView>
 					</View>

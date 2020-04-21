@@ -187,6 +187,7 @@ export default class Search extends React.Component {
 							<SearchBlock
 								title="Поиск по телефону и имени"
 								filters={require('../assets/icons/filters.png')}
+								onPress={() => this.props.navigation.navigate('Filters')}
 							/>
 						</View>
 						<View style={{ marginLeft: 15, marginRight: 15, marginBottom: 20 }}>
@@ -259,8 +260,8 @@ export default class Search extends React.Component {
 							sectionHeight={50}
 							initialNumToRender={this.state.dataArray.length}
 							showsVerticalScrollIndicator={false}
-							SectionListClickCallback={(item, index) => {
-								console.log('---SectionListClickCallback--:', item, index);
+							SectionListClickCallback={() => {
+								this.props.navigation.navigate('Messages');
 							}}
 							sectionHeaderTextStyle={{ color: '#9EA5B1', fontWeight: 'normal' }}
 						/>
@@ -327,10 +328,6 @@ export default class Search extends React.Component {
 									this.props.navigation.navigate('Profile');
 									this.hideDrawer();
 								}}
-								onPress={() => {
-									this.props.navigation.navigate('Profile');
-									this.hideDrawer();
-								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -358,7 +355,7 @@ export default class Search extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Filters');
+									this.props.navigation.navigate('Search');
 									this.hideDrawer();
 								}}
 							>
@@ -418,7 +415,7 @@ export default class Search extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Settings');
+									this.props.navigation.navigate('MainPage');
 									this.hideDrawer();
 								}}
 							>

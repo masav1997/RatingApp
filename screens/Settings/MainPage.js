@@ -172,7 +172,7 @@ export default class MainPage extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Filters'); this.hideDrawer()}}
+								onPress={() => {this.props.navigation.navigate('Search'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -226,7 +226,7 @@ export default class MainPage extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Settings'); this.hideDrawer()}}
+								onPress={() => {this.props.navigation.navigate('MainPage'); this.hideDrawer()}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

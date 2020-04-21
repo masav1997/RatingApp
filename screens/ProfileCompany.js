@@ -345,7 +345,7 @@ export default class ProfileCompany extends React.Component {
 								alignSelf: 'center',
 							}}
 							onPress={() => {
-								this.props.navigation.navigate('Filters');
+								this.props.navigation.navigate('Search');
 								this.hideDrawer();
 							}}
 						>
@@ -405,7 +405,7 @@ export default class ProfileCompany extends React.Component {
 								alignSelf: 'center',
 							}}
 							onPress={() => {
-								this.props.navigation.navigate('Settings');
+								this.props.navigation.navigate('MainPage');
 								this.hideDrawer();
 							}}
 						>

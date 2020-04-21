@@ -96,7 +96,7 @@ export default class Contacts extends React.Component {
 						<SearchBlock
 							title="Поиск по телефону и имени"
 							filters={require('../assets/icons/filters.png')}
-							
+							onPress={() => this.props.navigation.navigate('Filters')}
 						/>
 						</View>
 						<SectionListModule
@@ -173,10 +173,6 @@ export default class Contacts extends React.Component {
 									this.props.navigation.navigate('Profile');
 									this.hideDrawer();
 								}}
-								onPress={() => {
-									this.props.navigation.navigate('Profile');
-									this.hideDrawer();
-								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -204,7 +200,7 @@ export default class Contacts extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Filters');
+									this.props.navigation.navigate('Search');
 									this.hideDrawer();
 								}}
 							>
@@ -264,7 +260,7 @@ export default class Contacts extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Settings');
+									this.props.navigation.navigate('MainPage');
 									this.hideDrawer();
 								}}
 							>

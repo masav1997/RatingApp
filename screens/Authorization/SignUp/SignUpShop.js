@@ -58,12 +58,12 @@ export default class SignUpShop extends React.Component {
 								icon={<ViewIcon onPress={() => this.setState({ press1: !this.state.press1 })} />}
 								secureTextEntry={this.state.press1 ? false : true}
 							/>
-							<Button buttonTitle="Зарегистрироваться" />
+							<Button buttonTitle="Зарегистрироваться" onPress={() => this.props.navigation.navigate('EditProfile')}/>
 							<Title
 								title="Регистрация"
 								subtitle="Уже есть аккаунт?"
 								linkTitle=" Авторизироваться."
-								onPress={() => this.props.navigation.navigate('Profile1')}
+								onPress={() => this.props.navigation.navigate('SignInShop')}
 							/>
 						</ScrollView>
 					</View>

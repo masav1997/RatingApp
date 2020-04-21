@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, TextInput, Image } from 'react-native';
+import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 
 export default class SearchBlock extends React.Component {
 	render() {
-		const { title, filters } = this.props;
+		const { title, filters, onPress } = this.props;
 
 		return (
 			<View
@@ -25,12 +25,12 @@ export default class SearchBlock extends React.Component {
 				<View style={{ flex: 11 }}>
 					<TextInput placeholder={title} placeholderTextColor={'#B5BBC9'} />
 				</View>
-				<View style={{ flex: 1 }}>
+				<TouchableOpacity style={{ flex: 1 }} onPress={onPress}>
 					<Image
 						source={filters}
 						style={{ width: 19, height: 19, tintColor: '#CBD0DB', top: 5 }}
 					/>
-				</View>
+				</TouchableOpacity>
 			</View>
 		);
 	}
