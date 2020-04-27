@@ -213,7 +213,7 @@ export default class SectionListModule extends Component {
 					</View>
 					{this.state.isModalVisible ? (
 						<View style={{ flex: 1, justifyContent: 'center' }}>
-							<Modal isVisible={this.state.isModalVisible} hasBackdrop={false} onBackdropPress={this.toggleModal}>
+							<Modal isVisible={this.state.isModalVisible} backdropOpacity={0} onBackdropPress={this.toggleModal}>
 								<View
 									style={{
 										backgroundColor: '#FFF',
