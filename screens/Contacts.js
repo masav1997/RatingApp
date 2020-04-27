@@ -107,6 +107,9 @@ export default class Contacts extends React.Component {
 							SectionListClickCallback={() => {
 								this.props.navigation.navigate('Messages');
 							}}
+							onPress1={() => {
+								this.props.navigation.navigate('Messages');
+							}}
 							sectionHeaderTextStyle={{ color: '#9EA5B1', fontWeight: 'normal' }}
 						/>
 					</View>

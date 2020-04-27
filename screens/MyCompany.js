@@ -68,7 +68,9 @@ export default class MyCompany extends React.Component {
 							<SearchBlock title="Поиск по телефону и названию" filters={require('../assets/icons/filters.png')} onPress={() => this.props.navigation.navigate('Filters')}/>
 							<AllCompanies title1="Все компании"
 								subtitle1="У нас в приложении вы можете найти более 5000 компаний"
-								image={require('../assets/icons/companies1.png')}/>
+								image={require('../assets/icons/companies1.png')}
+								onPress={() => this.props.navigation.navigate('ProfileCompany1')}	
+							/>
 							<ListBlock
 								title="Собственные контакты"
 								title1="UKnow"
@@ -76,7 +78,7 @@ export default class MyCompany extends React.Component {
 								mark="3.0"
 								image={require('../assets/icons/avatar.png')}
 								color="#F2C525"
-								onPress={() => this.props.navigation.navigate('ReviewCompany')}
+								onPress={() => this.props.navigation.navigate('ReviewVoice')}
 							/>
 							<View style={{ marginBottom: -20 }} />
 							<ListBlock

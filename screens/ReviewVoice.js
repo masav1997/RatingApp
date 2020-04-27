@@ -20,44 +20,6 @@ import Slider from 'react-native-slider';
 
 const { width, height } = Dimensions.get('window');
 
-const audioBookPlaylist = [
-	{
-		title: 'Hamlet - Act I',
-		author: 'William Shakespeare',
-		source: 'Librivox',
-		uri: 'https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act1_shakespeare.mp3',
-		imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg',
-	},
-	{
-		title: 'Hamlet - Act II',
-		author: 'William Shakespeare',
-		source: 'Librivox',
-		uri: 'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3',
-		imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg',
-	},
-	{
-		title: 'Hamlet - Act III',
-		author: 'William Shakespeare',
-		source: 'Librivox',
-		uri: 'http://www.archive.org/download/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3',
-		imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg',
-	},
-	{
-		title: 'Hamlet - Act IV',
-		author: 'William Shakespeare',
-		source: 'Librivox',
-		uri: 'https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act4_shakespeare.mp3',
-		imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg',
-	},
-	{
-		title: 'Hamlet - Act V',
-		author: 'William Shakespeare',
-		source: 'Librivox',
-		uri: 'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act5_shakespeare.mp3',
-		imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg',
-	},
-];
-
 export default class ReviewVoice extends React.Component {
 	state = {
 		isDrawerVisible: false,
@@ -148,7 +110,7 @@ export default class ReviewVoice extends React.Component {
 							<TextBlock title="Оценка" text="4.7 из 5.0" />
 							<TextBlock title="Дата" text="03 апреля 2020  19:45" />
 							<TextBlock title="Отзыв" />
-							<View style={{ flexDirection: 'row' }}>
+							<View style={{ flexDirection: 'row', marginTop:-20 }}>
 								<View
 									style={{
 										flex: 1,
@@ -177,7 +139,7 @@ export default class ReviewVoice extends React.Component {
 									<View style={{ flexDirection: 'row', marginBottom:-10 }}>
 										<View style={{ flex: 1 }}>
 											<Text style={{ color: '#fff', fontSize: 11, fontWeight: '600' }}>
-												00:00
+												0:00
 											</Text>
 										</View>
 										<View style={{ flex: 1 }}>

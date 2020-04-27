@@ -10,6 +10,7 @@ import Modal from 'react-native-modal';
 import ModalTitle from '../components/ModalTitle';
 import MarkCircle from '../components/MarkCircle';
 import Input from '../components/Input';
+import Slider from 'react-native-slider';
 
 const { width, height } = Dimensions.get('window');
 
@@ -17,13 +18,21 @@ export default class ProfileCompany extends React.Component {
 	state = {
 		isDrawerVisible: false,
 		isModalVisible: false,
+		isModalVisible1: false,
 		bool: false,
+		bool1: false,
 	};
 	hideDrawer = () => {
 		this.setState({ isDrawerVisible: !this.state.isDrawerVisible });
 	};
 	toggleModal = () => {
 		this.setState({ isModalVisible: !this.state.isModalVisible });
+	};
+	toggleModal1 = () => {
+		this.setState({ isModalVisible1: !this.state.isModalVisible1, isModalVisible: !this.state.isModalVisible });
+	};
+	toggleModal2 = () => {
+		this.setState({ isModalVisible1: !this.state.isModalVisible1 });
 	};
 	render() {
 		return (
@@ -46,8 +55,11 @@ export default class ProfileCompany extends React.Component {
 						</TouchableOpacity>
 					}
 					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+						<TouchableOpacity
+							style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20 }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon onPress={() => this.props.navigation.goBack()} />
 						</TouchableOpacity>
 					}
 				/>
@@ -244,17 +256,124 @@ export default class ProfileCompany extends React.Component {
 						<Input
 							placeholder="Текст вашего отзыва"
 							icon={
-								<TouchableOpacity onPress={this.toggleModal}>
-									<Image
-										source={require('../assets/icons/mic.png')}
-										style={{ width: 15, height: 20 }}
-									/>
-								</TouchableOpacity>
+								this.state.bool1 ? (
+									<TouchableOpacity
+										onPress={() => {
+											this.setState({ bool1: false });
+										}}
+									>
+										<Image
+											source={require('../assets/icons/mic1.png')}
+											style={{ width: 36, height: 37, right: 10, bottom: 10 }}
+										/>
+									</TouchableOpacity>
+								) : (
+									<TouchableOpacity
+										onPress={() => {
+											this.setState({ bool1: true });
+										}}
+									>
+										<Image
+											source={require('../assets/icons/mic.png')}
+											style={{ width: 15, height: 20 }}
+										/>
+									</TouchableOpacity>
+								)
 							}
 						/>
 					</ScrollView>
 					<View style={{ marginBottom: -30 }}></View>
-					<Button buttonTitle="Оставить" onPress={this.toggleModal} />
+					<Button buttonTitle="Оставить" onPress={this.toggleModal1} />
+				</Modal>
+				<Modal
+					isVisible={this.state.isModalVisible1}
+					style={{
+						width: width,
+						height: 'auto',
+						backgroundColor: '#FFF',
+						borderTopLeftRadius: 20,
+						borderTopRightRadius: 20,
+						marginLeft: 0,
+						marginRight: 0,
+						marginBottom: 0,
+						marginTop: width / 2.5,
+						textAlign: 'left',
+					}}
+				>
+					<ModalTitle title="Оставьте отзыв" />
+					<ScrollView style={{ padding: 20 }}>
+						<View style={{ flexDirection: 'row', marginBottom: 20 }}>
+							<MarkCircle mark="1.0" />
+							<MarkCircle mark="2.0" />
+							<MarkCircle mark="3.0" />
+							<MarkCircle mark="4.0" />
+							<MarkCircle mark="5.0" />
+						</View>
+						<View style={{ flexDirection: 'row', marginTop: 20 }}>
+							<View
+								style={{
+									flex: 1,
+									backgroundColor: '#5227D0',
+									borderRadius: 18,
+									width: 50,
+									height: 50,
+									marginRight: 5,
+								}}
+							>
+								<Image
+									source={require('../assets/icons/play.png')}
+									style={{ width: 15, height: 26, alignSelf: 'center', top: 10 }}
+								/>
+							</View>
+							<View
+								style={{
+									flex: 4,
+									backgroundColor: '#5227D0',
+									borderRadius: 18,
+									height: 50,
+									paddingHorizontal: 20,
+									paddingVertical: 5,
+								}}
+							>
+								<View style={{ flexDirection: 'row', marginBottom: -10 }}>
+									<View style={{ flex: 1 }}>
+										<Text style={{ color: '#fff', fontSize: 11, fontWeight: '600' }}>0:00</Text>
+									</View>
+									<View style={{ flex: 1 }}>
+										<Text
+											style={{
+												textAlign: 'right',
+												color: '#fff',
+												fontSize: 11,
+												fontWeight: '600',
+											}}
+										>
+											3:45
+										</Text>
+									</View>
+								</View>
+								<Slider
+									thumbStyle={{ width: 0, height: 0 }}
+									thumbTintColor="#FFF"
+									minimumTrackTintColor="#FFF"
+									maximumTrackTintColor="rgba(255, 255, 255, 0.5)"
+								/>
+							</View>
+						</View>
+						<Text
+							style={{
+								textAlign: 'center',
+								color: '#5227D0',
+								fontSize: 14,
+								fontWeight: '600',
+								marginTop: 20,
+							}}
+						>
+							Удалить
+						</Text>
+					</ScrollView>
+					<View style={{ marginBottom: -30 }}></View>
+					<Button buttonTitle="Оставить" onPress={this.toggleModal2} />
 				</Modal>
 				<Modal
 					isVisible={this.state.isDrawerVisible}

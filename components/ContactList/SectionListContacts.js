@@ -8,12 +8,16 @@ import {
 	Image,
 	Dimensions,
 	TouchableWithoutFeedback,
+	TouchableHighlight,
 	SectionList,
 } from 'react-native';
+import Modal from 'react-native-modal';
+import { BoxShadow } from 'react-native-shadow';
 
 const { width, height } = Dimensions.get('window');
 import { makePy } from './getFirstAlphabet';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 var _ = require('lodash');
 
 export default class SectionListModule extends Component {
@@ -190,31 +194,122 @@ export default class SectionListModule extends Component {
 	};
 }
 
-class SectionItem extends PureComponent {
+ export class SectionItem extends PureComponent {
+	state = {
+		isModalVisible: false,
+	};
+	toggleModal = () => {
+		this.setState({ isModalVisible: !this.state.isModalVisible });
+	};
 	render() {
+		const { onPress1, onPress2, onPress3, onPress4} = this.props;
 		return (
-			<TouchableWithoutFeedback
-				onPress={() => {
-					this.props.callback();
-				}}
-			>
+			<TouchableWithoutFeedback onPress={this.toggleModal}>
 				<View style={styles.itemStyle}>
-					<View style={{flex:1}}>
-						<Image
-							style={{ width: 40, height: 40, marginRight: 10 }}
-							source={this.props.item.avatar}
-						/>
+					<View style={{ flex: 1 }}>
+						<Image style={{ width: 40, height: 40, marginRight: 10 }} source={this.props.item.avatar} />
 					</View>
-					<View style={{flex:4}}>
+					<View style={{ flex: 4 }}>
 						<Text style={styles.artistText}>{this.props.item.name}</Text>
 						<Text style={styles.sectionItemCountStyle}>{this.props.item.count}</Text>
 					</View>
-					<TouchableOpacity style={{flex:1, justifyContent: 'center',}}>
-                        <Image
-							style={{ width: 15, height: 15 }}
-							source={require('../../assets/icons/dots.png')}
-						/>
-                    </TouchableOpacity>
+					{this.state.isModalVisible ? (
+						<View style={{ flex: 1, justifyContent: 'center' }}>
+							<Modal isVisible={this.state.isModalVisible} hasBackdrop={false} onBackdropPress={this.toggleModal}>
+								<View
+									style={{
+										backgroundColor: '#FFF',
+										height: 'auto',
+										width: width / 2.2,
+										alignSelf: 'flex-end',
+										marginBottom: 200,
+										elevation: 10,
+										borderRadius: 10,
+										padding: 15,
+									}}
+								>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={onPress1, this.toggleModal}
+									>
+										<View style={{ flex: 1 }}>
+											<Image
+												style={{ width: 15, height: 15 }}
+												source={require('../../assets/icons/call.png')}
+											/>
+										</View>
+										<View style={{ flex: 3, fontSize: 14, color: '#0D1F3C', fontWeight: '600' }}>
+											<Text>Позвонить</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={onPress2, this.toggleModal}
+									>
+										<Image
+											style={{ width: 15, height: 15 }}
+											source={require('../../assets/icons/chat.png')}
+										/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Написать</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={onPress3, this.toggleModal}
+									>
+										<Image
+											style={{ width: 15, height: 15 }}
+											source={require('../../assets/icons/forward1.png')}
+										/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Поделиться</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={onPress4, this.toggleModal}
+									>
+											<Image
+												style={{ width: 15, height: 15 }}
+												source={require('../../assets/icons/edit.png')}
+											/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Редактировать</Text>
+										</View>
+									</TouchableOpacity>
+								</View>
+							</Modal>
+						</View>
+					) : (
+						<TouchableOpacity style={{ flex: 1, justifyContent: 'center' }}>
+							<Image style={{ width: 15, height: 15 }} source={require('../../assets/icons/dots.png')} />
+						</TouchableOpacity>
+					)}
 				</View>
 			</TouchableWithoutFeedback>
 		);
@@ -232,9 +327,9 @@ const styles = StyleSheet.create({
 		width: '97%',
 		flexDirection: 'row',
 		paddingLeft: 15,
-        paddingRight: 15,
-        marginTop:5,
-        marginBottom:10,
+		paddingRight: 15,
+		marginTop: 5,
+		marginBottom: 10,
 	},
 	letterView: {
 		width: 15,
@@ -242,7 +337,7 @@ const styles = StyleSheet.create({
 		height: '100%',
 		alignItems: 'center',
 		justifyContent: 'center',
-        right: 0,
+		right: 0,
 	},
 	sectionHeaderView: {
 		backgroundColor: '#ffffff',

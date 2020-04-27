@@ -27,6 +27,7 @@ import Search from './screens/Search';
 import ReviewCompany from './screens/ReviewCompany';
 import CheckList from './screens/CheckList';
 import Map from './screens/Map';
+import SectionListModule from './components/ContactList/SectionListContacts/'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,7 +50,6 @@ function App() {
 				<Stack.Screen name="About" component={About} />
 				<Stack.Screen name="Code" component={Code} />
 				<Stack.Screen name="Check" component={Check} />
-				<Stack.Screen name="Profile" component={Profile} />
 				<Stack.Screen name="Profile1" component={Profile1} />
 				<Stack.Screen name="ProfileCompany" component={ProfileCompany} />
 				<Stack.Screen name="ProfileCompany1" component={ProfileCompany1} />
@@ -58,11 +58,10 @@ function App() {
 				<Stack.Screen name="Messages" component={Messages} />
 				<Stack.Screen name="Contacts" component={Contacts} />
 				<Stack.Screen name="ReviewVoice" component={ReviewVoice} />
-				<Stack.Screen name="Scan" component={Scan} />
-				<Stack.Screen name="EditProfile" component={EditProfile} />
 				<Stack.Screen name="Search" component={Search} />
 				<Stack.Screen name="ReviewCompany" component={ReviewCompany} />
 				<Stack.Screen name="Map" component={Map} />
+				<Stack.Screen name="SectionItem" component={SectionListModule} />
 				<Stack.Screen name="CheckList">
 					{() => (
 						<Tab.Navigator
