@@ -8,11 +8,9 @@ import {
 	Image,
 	Dimensions,
 	TouchableWithoutFeedback,
-	TouchableHighlight,
 	SectionList,
 } from 'react-native';
 import Modal from 'react-native-modal';
-import { BoxShadow } from 'react-native-shadow';
 
 const { width, height } = Dimensions.get('window');
 import { makePy } from './getFirstAlphabet';
