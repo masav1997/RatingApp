@@ -44,7 +44,7 @@ export default class InputMessage extends React.Component {
 					{this.state.press ? (
 						<Image
 							source={require('../assets/icons/plus.png')}
-							style={{ width: '8%', height: 26.5, alignSelf: 'center' }}
+							style={{ width: 26.5, height: 26.5, alignSelf: 'center' }}
 						/>
 					) : (
 						<Image

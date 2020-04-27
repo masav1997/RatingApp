@@ -42,13 +42,13 @@ export default class Profile extends React.Component {
 					right={
 						<TouchableOpacity
 							onPress={this.hideDrawer}
-							style={{ width: 100, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
 						>
 							<NavIcon onPress={this.hideDrawer} />
 						</TouchableOpacity>
 					}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
 								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}
@@ -88,7 +88,7 @@ export default class Profile extends React.Component {
 						<Text style={{ textAlign: 'center', fontSize: 16, bottom: 10, color: '#B5BBC9' }}>
 							786-222-8410
 						</Text>
-						<ScrollView style={{ padding: 20, paddingTop: 0 }}>
+						<ScrollView style={{ padding: 20, paddingTop: 0, marginBottom: 120 }}>
 							<RowBlock
 								row1="Отзывов"
 								row2="184"

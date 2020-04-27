@@ -8,7 +8,6 @@ import HeaderTitle from '../components/HeaderTitle';
 import RadioList from '../components/RadioList';
 import Button from '../components/Button';
 
-
 const { width, height } = Dimensions.get('window');
 
 const PROP = [
@@ -65,11 +64,18 @@ export default class Filters extends React.Component {
 			>
 				<StatusBar barStyle="light-content" />
 				<Header
-					right={<Text style={{paddingRight:20, fontSize:11, color: '#FFF'}}>Очистить</Text>}
-					center={<HeaderTitle title="Мои компании" />}
+					right={
+						<Text style={{ paddingRight: 20, fontSize: 11, width: 100, color: '#FFF' }}>
+							Очистить
+						</Text>
+					}
+					center={<HeaderTitle title="Мои компании" style={{ bottom: 10 }} />}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+						<TouchableOpacity
+							style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20 }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon onPress={() => this.props.navigation.goBack()} />
 						</TouchableOpacity>
 					}
 				/>
@@ -87,12 +93,12 @@ export default class Filters extends React.Component {
 						}}
 					>
 						<ScrollView style={{ padding: 20 }}>
-							<Multislider title="Средняя оценка в каталогах"/>
-							<Multislider title="Средняя оценка на сервисе"/>
+							<Multislider title="Средняя оценка в каталогах" />
+							<Multislider title="Средняя оценка на сервисе" />
 							<RadioList PROP={PROP} title="Категория" />
-							<View style={{marginBottom:-40}}/>
-							<Button buttonTitle="Показать: 35"/>
-							<View style={{marginBottom:80}}/>
+							<View style={{ marginBottom: -40 }} />
+							<Button buttonTitle="Показать: 35" />
+							<View style={{ marginBottom: 80 }} />
 						</ScrollView>
 					</View>
 				</SafeAreaView>

@@ -67,7 +67,7 @@ export default class SignInShop extends React.Component {
 									Забыли пароль?
 								</Text>
 							</TouchableOpacity>
-							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('Contacts')} />
+							<Button buttonTitle="Войти" onPress={() => this.props.navigation.navigate('CheckList')} />
 							<Title
 								subtitle="Ещё нет аккаунта?"
 								linkTitle=" Зарегистрироваться."

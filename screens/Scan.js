@@ -45,20 +45,20 @@ export default class Scan extends React.Component {
 				<Header
 					center={<HeaderTitle title="Сканирование" />}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
 								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}
 				/>
 
 				<SafeAreaView>
-					<ScrollView style={{ padding: 20, paddingTop: 0 }}>
+					<ScrollView style={{ padding: 20, paddingTop: 0, marginBottom: 120}}>
 						<View
 							style={{
 								width: width / 1.4,
 								height: width / 1.4,
 								backgroundColor: '#fff',
-								marginTop: Platform.OS === 'android' ? height / 4 : height / 5.3,
+								marginTop: Platform.OS === 'android' ? height / 4.6 : height / 6.6,
 								borderRadius: 20,
 								alignSelf:'center'
 							}}
@@ -73,7 +73,7 @@ export default class Scan extends React.Component {
 						>
 							Расположите QR код в центре экрана
 						</Text>
-						<Button buttonTitle="Сканировать"/>
+						<Button buttonTitle="Сканировать" onPress={() => this.props.navigation.navigate('Contacts')}/>
 					</ScrollView>
 				</SafeAreaView>
 			</ImageBackground>

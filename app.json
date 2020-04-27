@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "HelloWorld",
+    "name": "RatingApp",
     "slug": "RatingApp",
     "platforms": [
       "ios",

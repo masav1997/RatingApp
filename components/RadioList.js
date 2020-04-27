@@ -4,10 +4,11 @@ import { View, TouchableOpacity, Text, Image } from 'react-native';
 export default class RadioList extends React.Component {
 	state = {
 		value: null,
+		bool: false
 	};
 	render() {
 		const { PROP, title } = this.props;
-		const { value } = this.state;
+		const { value, bool } = this.state;
 
 		const container = {
 			marginBottom: 24,
@@ -56,10 +57,11 @@ export default class RadioList extends React.Component {
 								onPress={() => {
 									this.setState({
 										value: res.key,
+										bool: !this.state.bool
 									});
 								}}
 							>
-								{value === res.key && (
+								{value === res.key && bool && (
 									<Image source={require('../assets/icons/done.png')} style={selectedRb} />
 								)}
 							</TouchableOpacity>

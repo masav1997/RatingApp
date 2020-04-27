@@ -159,7 +159,7 @@ export default class Search extends React.Component {
 					right={
 						<TouchableOpacity
 							onPress={this.hideDrawer}
-							style={{ width: 100, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
 						>
 							<NavIcon onPress={this.hideDrawer} />
 						</TouchableOpacity>
@@ -261,7 +261,7 @@ export default class Search extends React.Component {
 							initialNumToRender={this.state.dataArray.length}
 							showsVerticalScrollIndicator={false}
 							SectionListClickCallback={() => {
-								this.props.navigation.navigate('Messages');
+								this.props.navigation.navigate('ProfileCompany');
 							}}
 							sectionHeaderTextStyle={{ color: '#9EA5B1', fontWeight: 'normal' }}
 						/>
@@ -325,7 +325,7 @@ export default class Search extends React.Component {
 									alignSelf: 'center',
 								}}
 								onPress={() => {
-									this.props.navigation.navigate('Profile');
+									this.props.navigation.navigate('Contacts');
 									this.hideDrawer();
 								}}
 							>

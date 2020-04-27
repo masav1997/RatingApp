@@ -50,7 +50,7 @@ export default class Multislider extends React.Component {
 					onValuesChange={this.multiSliderValuesChange}
 					min={0}
 					max={5}
-					step={0.1}
+					step={1}
 					selectedStyle={{
 						backgroundColor: '#5227D0',
 						height: 4,

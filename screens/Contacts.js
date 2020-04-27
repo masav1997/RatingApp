@@ -4,11 +4,10 @@ import {
 	Dimensions,
 	SafeAreaView,
 	StatusBar,
-	ScrollView,
 	Text,
-	TouchableOpacity,
 	Image,
-	TextInput,
+	TouchableOpacity,
+	TouchableHighlight
 } from 'react-native';
 import Header from '../components/Header';
 import NavIcon from '../components/NavIcon';
@@ -66,12 +65,12 @@ export default class Contacts extends React.Component {
 				<StatusBar barStyle="light-content" />
 				<Header
 					right={
-						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 100, height: 50, bottom: 10, paddingRight: 20 }}
+						<TouchableHighlight
+							onHideUnderlay={this.hideDrawer}
+							style={{ width: 50, height: 60 }}
 						>
 							<NavIcon onPress={this.hideDrawer} />
-						</TouchableOpacity>
+						</TouchableHighlight>
 					}
 					center={<HeaderTitle title="Контакты" />}
 				/>
@@ -105,8 +104,8 @@ export default class Contacts extends React.Component {
 							sectionHeight={50}
 							initialNumToRender={this.state.dataArray.length}
 							showsVerticalScrollIndicator={false}
-							SectionListClickCallback={(item, index) => {
-								console.log('---SectionListClickCallback--:', item, index);
+							SectionListClickCallback={() => {
+								this.props.navigation.navigate('Messages');
 							}}
 							sectionHeaderTextStyle={{ color: '#9EA5B1', fontWeight: 'normal' }}
 						/>

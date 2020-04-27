@@ -33,7 +33,7 @@ export default class EditProfile extends React.Component {
 				<Header
 					center={<HeaderTitle title="Основные данные" />}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
 								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}
@@ -51,7 +51,7 @@ export default class EditProfile extends React.Component {
 							justifyContent: 'flex-end',
 						}}
 					>
-						<ScrollView style={{ padding: 20 }}>
+						<ScrollView style={{ padding: 20, marginBottom: 150 }}>
 							<Text
 								style={{
 									fontSize: 13,
@@ -111,7 +111,7 @@ export default class EditProfile extends React.Component {
 							<Input
 								placeholder="Точки продаж"
 								icon={
-									<TouchableOpacity>
+									<TouchableOpacity onPress={() => this.props.navigation.navigate('Map')}>
 										<Image
 											source={require('../assets/icons/map.png')}
 											style={{ width: 16.5, height: 16 }}

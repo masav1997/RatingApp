@@ -12,14 +12,24 @@ export default class Header extends React.Component {
 		};
 		const leftStyle = {
 			flex: 1,
+			alignItems: 'center',
+			alignContent: 'center',
+			justifyContent:'center',
+			height:60
 		};
 		const centerStyle = {
-			flex: 3,
+			flex: 6,
 			alignItems: 'center',
+			alignContent: 'center',
+			justifyContent:'center',
+			height:60
 		};
 		const rightStyle = {
 			flex: 1,
-			alignItems: 'flex-end',
+			alignItems: 'center',
+			alignContent: 'center',
+			justifyContent:'center',
+			height:60
 		};
 		return (
 			<View style={headerStyle}>
@@ -27,7 +37,7 @@ export default class Header extends React.Component {
 					{left}
 				</View>
 				<View style={centerStyle}>{center}</View>
-				<TouchableOpacity style={rightStyle}>{right}</TouchableOpacity>
+				<View style={rightStyle}>{right}</View>
 			</View>
 		);
 	}

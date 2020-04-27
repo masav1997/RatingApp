@@ -40,13 +40,13 @@ export default class ProfileCompany extends React.Component {
 					right={
 						<TouchableOpacity
 							onPress={this.hideDrawer}
-							style={{ width: 100, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
 						>
 							<NavIcon onPress={this.hideDrawer} />
 						</TouchableOpacity>
 					}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
 								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}

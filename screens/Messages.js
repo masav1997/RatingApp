@@ -6,7 +6,7 @@ import {
 	StatusBar,
 	ScrollView,
 	Text,
-	TouchableOpacity,
+	TouchableHighlight,
 	Image,
 	TextInput,
 } from 'react-native';
@@ -69,9 +69,12 @@ export default class Messages extends React.Component {
 						</View>
 					}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
-						</TouchableOpacity>
+						<TouchableHighlight
+							onHideUnderlay={() => this.props.navigation.goBack()}
+							style={{ width: 50, height: 60, left:20 }}
+						>
+							<BackIcon onPress={() => this.props.navigation.goBack()} />
+						</TouchableHighlight>
 					}
 				/>
 
@@ -121,7 +124,7 @@ export default class Messages extends React.Component {
 							<MessageBlock message="🖐" status={require('../assets/icons/check2.png')} time="23:06" />
 							<TextMessage avatar={require('../assets/icons/avatar2.png')} />
 						</ScrollView>
-						<InputMessage/>
+						<InputMessage />
 					</View>
 				</SafeAreaView>
 			</View>

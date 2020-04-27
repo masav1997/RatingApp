@@ -7,7 +7,7 @@ export default class BackIcon extends React.Component {
 		const imgStyle = {
 			width: 20,
 			height: 20,
-			top: 20,
+			marginTop:20,
 		};
 
 		return <TouchableOpacity onPress={onPress}><Image source={require('../assets/icons/back.png')} style={imgStyle} /></TouchableOpacity>;

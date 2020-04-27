@@ -24,7 +24,7 @@ export default class ForgotPassword extends React.Component {
 				<Header
 					center={<HeaderTitle title="Забыли пароль?" />}
 					left={
-						<TouchableOpacity style={{ width: 100, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
+						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
 								<BackIcon onPress={() => this.props.navigation.goBack()}/>
 						</TouchableOpacity>
 					}

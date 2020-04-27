@@ -16,19 +16,19 @@ export default class SearchBlock extends React.Component {
 					marginTop: 10,
 				}}
 			>
-				<View style={{ flex: 1 }}>
+				<View style={{ flex: 1, alignSelf:'center' }}>
 					<Image
 						source={require('../assets/icons/search.png')}
-						style={{ width: 19, height: 19, tintColor: '#CBD0DB', top: 5 }}
+						style={{ width: 19, height: 19, tintColor: '#CBD0DB' }}
 					/>
 				</View>
-				<View style={{ flex: 11 }}>
+				<View style={{ flex: 9, alignSelf:'center' }}>
 					<TextInput placeholder={title} placeholderTextColor={'#B5BBC9'} />
 				</View>
-				<TouchableOpacity style={{ flex: 1 }} onPress={onPress}>
+				<TouchableOpacity style={{ flex: 1, alignSelf:'center' }} onPress={onPress}>
 					<Image
 						source={filters}
-						style={{ width: 19, height: 19, tintColor: '#CBD0DB', top: 5 }}
+						style={{ width: 19, height: 19, tintColor: '#CBD0DB' }}
 					/>
 				</TouchableOpacity>
 			</View>
