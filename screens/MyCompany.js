@@ -1,17 +1,7 @@
 import * as React from 'react';
-import {
-	View,
-	Dimensions,
-	SafeAreaView,
-	StatusBar,
-	ScrollView,
-	Text,
-	TouchableOpacity,
-	Image,
-} from 'react-native';
+import { View, Dimensions, SafeAreaView, StatusBar, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
 import Header from '../components/Header';
 import NavIcon from '../components/NavIcon';
-import BackIcon from '../components/BackIcon';
 import ListBlock from '../components/ListBlock';
 import AllCompanies from '../components/AllCompanies';
 import SearchBlock from '../components/SearchBlock';
@@ -38,25 +28,31 @@ export default class MyCompany extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
-						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
-						>
-							<NavIcon onPress={this.hideDrawer} />
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-start' }}></TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Мои компании" />
+						</View>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-					center={
-						<HeaderTitle title="Мои компании"/>
-					}
-				/>
+					</View>
+				</SafeAreaView>
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -64,12 +60,17 @@ export default class MyCompany extends React.Component {
 							justifyContent: 'flex-end',
 						}}
 					>
-						<ScrollView style={{ padding: 20}}>
-							<SearchBlock title="Поиск по телефону и названию" filters={require('../assets/icons/filters.png')} onPress={() => this.props.navigation.navigate('Filters')}/>
-							<AllCompanies title1="Все компании"
+						<ScrollView style={{ padding: 20 }}>
+							<SearchBlock
+								title="Поиск по телефону и названию"
+								filters={require('../assets/icons/filters.png')}
+								onPress={() => this.props.navigation.navigate('Filters')}
+							/>
+							<AllCompanies
+								title1="Все компании"
 								subtitle1="У нас в приложении вы можете найти более 5000 компаний"
 								image={require('../assets/icons/companies1.png')}
-								onPress={() => this.props.navigation.navigate('ProfileCompany1')}	
+								onPress={() => this.props.navigation.navigate('ProfileCompany1')}
 							/>
 							<ListBlock
 								title="Собственные контакты"
@@ -132,7 +133,7 @@ export default class MyCompany extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',
@@ -214,7 +215,10 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Search'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('Search');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -241,7 +245,10 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('MyCompany'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('MyCompany');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -268,7 +275,10 @@ export default class MyCompany extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('MainPage'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('MainPage');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -295,7 +305,10 @@ export default class MyCompany extends React.Component {
 									marginTop: width / 2,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('SignInShop'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('SignInShop');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

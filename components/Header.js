@@ -1,43 +1,39 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity} from 'react-native';
 
 export default class Header extends React.Component {
 	render() {
-		const { left, center, right } = this.props;
+		const { left, center, right, onPress } = this.props;
 		const headerStyle = {
 			top: 50,
 			flexDirection: 'row',
+			width:'100%',
 			alignItems: 'center',
 			justifyContent: 'center',
+			backgroundColor: 'black',
+			paddingHorizontal: 40,
+			paddingBottom: 10
 		};
 		const leftStyle = {
 			flex: 1,
-			alignItems: 'center',
-			alignContent: 'center',
-			justifyContent:'center',
-			height:60
+			alignItems: 'flex-start',
 		};
 		const centerStyle = {
 			flex: 6,
 			alignItems: 'center',
-			alignContent: 'center',
-			justifyContent:'center',
-			height:60
 		};
 		const rightStyle = {
 			flex: 1,
 			alignItems: 'center',
-			alignContent: 'center',
-			justifyContent:'center',
-			height:60
+			alignSelf: 'center'
 		};
 		return (
 			<View style={headerStyle}>
-				<View style={leftStyle}>
+				<TouchableOpacity style={leftStyle} onPress={onPress}>
 					{left}
-				</View>
-				<View style={centerStyle}>{center}</View>
-				<View style={rightStyle}>{right}</View>
+				</TouchableOpacity>
+				<TouchableOpacity style={centerStyle}>{center}</TouchableOpacity>
+				<TouchableOpacity style={rightStyle}>{right}</TouchableOpacity>
 			</View>
 		);
 	}

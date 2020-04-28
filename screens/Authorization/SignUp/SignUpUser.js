@@ -26,19 +26,30 @@ export default class SignUpShop extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					center={
-						<View style={{ marginBottom: 10 }}>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 35,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-start' }}></TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
 							<HeaderTitle title="Регистрация" />
 						</View>
-					}
-				/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }}></TouchableOpacity>
+					</View>
+				</SafeAreaView>
+
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -58,7 +69,10 @@ export default class SignUpShop extends React.Component {
 								icon={<ViewIcon onPress={() => this.setState({ press1: !this.state.press1 })} />}
 								secureTextEntry={this.state.press1 ? false : true}
 							/>
-							<Button buttonTitle="Зарегистрироваться" onPress={() => this.props.navigation.navigate('ForgotPassword')}/>
+							<Button
+								buttonTitle="Зарегистрироваться"
+								onPress={() => this.props.navigation.navigate('ForgotPassword')}
+							/>
 							<Title
 								title="Регистрация"
 								subtitle="Уже есть аккаунт?"

@@ -31,24 +31,35 @@ export default class CheckList extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 35,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
-						>
-							<NavIcon onPress={this.hideDrawer} />
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						></TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Чеки" />
+						</View>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-					center={<HeaderTitle title="Чеки" />}
-				/>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -268,7 +279,7 @@ export default class CheckList extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',

@@ -11,9 +11,7 @@ export default class NavIcon extends React.Component {
 		};
 
 		return (
-			<TouchableOpacity onPress={onPress}>
 				<Image source={require('../assets/icons/nav.png')} style={imgStyle}></Image>
-			</TouchableOpacity>
 		);
 	}
 }

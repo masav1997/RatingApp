@@ -7,8 +7,7 @@ export default class HeaderTitle extends React.Component {
 		const textStyle = {
 			fontWeight: '600',
 			fontSize: 16,
-			color: '#fff',
-			textAlign:'center'
+			color: '#fff'
 		};
 		
 		return <Text style={textStyle}>{title}</Text>;

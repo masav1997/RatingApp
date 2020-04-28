@@ -155,24 +155,35 @@ export default class Search extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 35,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
-						>
-							<NavIcon onPress={this.hideDrawer} />
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						></TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Поиск" />
+						</View>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-					center={<HeaderTitle title="Поиск" />}
-				/>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -201,7 +212,7 @@ export default class Search extends React.Component {
 											paddingVertical: 5,
 											paddingHorizontal: 15,
 											borderRadius: 15,
-											marginRight: 5
+											marginRight: 5,
 										}}
 									>
 										<Text style={{ textAlign: 'center', fontSize: 15, color: '#fff' }}>Все</Text>
@@ -216,10 +227,12 @@ export default class Search extends React.Component {
 											paddingVertical: 5,
 											paddingHorizontal: 15,
 											borderRadius: 15,
-											marginRight: 5
+											marginRight: 5,
 										}}
 									>
-										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>Техника</Text>
+										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>
+											Техника
+										</Text>
 									</View>
 									<View
 										style={{
@@ -231,10 +244,12 @@ export default class Search extends React.Component {
 											paddingVertical: 5,
 											paddingHorizontal: 15,
 											borderRadius: 15,
-											marginRight: 5
+											marginRight: 5,
 										}}
 									>
-										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>Транспорт</Text>
+										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>
+											Транспорт
+										</Text>
 									</View>
 									<View
 										style={{
@@ -246,10 +261,12 @@ export default class Search extends React.Component {
 											paddingVertical: 5,
 											paddingHorizontal: 15,
 											borderRadius: 15,
-											marginRight: 5
+											marginRight: 5,
 										}}
 									>
-										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>Магазины</Text>
+										<Text style={{ textAlign: 'center', fontSize: 15, color: '#5227D0' }}>
+											Магазины
+										</Text>
 									</View>
 								</View>
 							</ScrollView>
@@ -272,7 +289,7 @@ export default class Search extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',

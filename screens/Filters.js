@@ -63,28 +63,36 @@ export default class Filters extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
-						<Text style={{ paddingRight: 20, fontSize: 11, width: 100, color: '#FFF' }}>
-							Очистить
-						</Text>
-					}
-					center={<HeaderTitle title="Мои компании" style={{ bottom: 10 }} />}
-					left={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20 }}
+							style={{ flex: 1, alignItems: 'flex-start' }}
 							onPress={() => this.props.navigation.goBack()}
 						>
-							<BackIcon onPress={() => this.props.navigation.goBack()} />
+							<BackIcon />
 						</TouchableOpacity>
-					}
-				/>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Мои компании" />
+						</View>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-end' }}
+						></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,

@@ -36,28 +36,34 @@ export default class ReviewCompany extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
 						>
-							<NavIcon onPress={this.hideDrawer} />
+							<BackIcon />
 						</TouchableOpacity>
-					}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-				/>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -104,8 +110,8 @@ export default class ReviewCompany extends React.Component {
 									onPress={() => this.props.navigation.navigate('Profile1')}
 								/>
 							</View>
-							<View style={{paddingLeft: 10, paddingRight: 10}}>
-								<View style={{ marginBottom: -20,  }} />
+							<View style={{ paddingLeft: 10, paddingRight: 10 }}>
+								<View style={{ marginBottom: -20 }} />
 								<ListBlock
 									title1="Flamp"
 									subtitle1="184 отзыва"
@@ -183,8 +189,7 @@ export default class ReviewCompany extends React.Component {
 							</View>
 						</ScrollView>
 						<View style={{ flexDirection: 'row', position: 'absolute', paddingHorizontal: 15 }}>
-							<View style={{ flex: 5, marginRight: 5 }}>
-							</View>
+							<View style={{ flex: 5, marginRight: 5 }}></View>
 							<View style={{ flex: 1 }}>
 								<View
 									style={{
@@ -261,7 +266,7 @@ export default class ReviewCompany extends React.Component {
 					style={{
 						height: height,
 						width: width / 1.5,
-						marginTop: Platform.OS === 'android' ? 0 : 20,
+						marginTop: 0,
 						marginBottom: 0,
 						marginLeft: width / 3,
 						backgroundColor: '#EDF1F9',

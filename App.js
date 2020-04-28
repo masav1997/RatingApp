@@ -104,7 +104,6 @@ export default class App extends React.Component {
 			);
 		}
 		return (
-			<SafeAreaProvider>
 				<NavigationContainer style={{ backgroundColor: '#5227D0' }}>
 					<StatusBar barStyle="light-content" />
 					<Stack.Navigator
@@ -182,7 +181,9 @@ export default class App extends React.Component {
 											position: 'absolute',
 											bottom: -1,
 											padding: 15,
-											height: 54,
+											height: '9.5%',
+											paddingTop: 35,
+											paddingBottom: 10,
 											zIndex: 8,
 											borderTopColor: '#FFFFFF',
 											borderTopWidth: 0.3,
@@ -199,7 +200,6 @@ export default class App extends React.Component {
 						</Stack.Screen>
 					</Stack.Navigator>
 				</NavigationContainer>
-			</SafeAreaProvider>
 		);
 	}
 }

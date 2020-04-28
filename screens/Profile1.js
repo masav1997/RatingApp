@@ -38,28 +38,34 @@ export default class Profile1 extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
 						>
-							<NavIcon onPress={this.hideDrawer} />
+							<BackIcon />
 						</TouchableOpacity>
-					}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-				/>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -116,7 +122,7 @@ export default class Profile1 extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',
@@ -198,7 +204,10 @@ export default class Profile1 extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('Search'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('Search');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -225,7 +234,10 @@ export default class Profile1 extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('MyCompany'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('MyCompany');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -252,7 +264,10 @@ export default class Profile1 extends React.Component {
 									marginTop: 10,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('MainPage'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('MainPage');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image
@@ -279,7 +294,10 @@ export default class Profile1 extends React.Component {
 									marginTop: width / 2,
 									alignSelf: 'center',
 								}}
-								onPress={() => {this.props.navigation.navigate('SignInShop'); this.hideDrawer()}}
+								onPress={() => {
+									this.props.navigation.navigate('SignInShop');
+									this.hideDrawer();
+								}}
 							>
 								<View style={{ flex: 1 }}>
 									<Image

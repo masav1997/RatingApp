@@ -42,17 +42,32 @@ export default class Scan extends React.Component {
 				source={require('../assets/icons/bg.png')}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					center={<HeaderTitle title="Сканирование" />}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 20,
+						}}
+					>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon />
 						</TouchableOpacity>
-					}
-				/>
+						<View style={{flex: 6, alignItems: 'center', justifyContent: 'flex-end'}}><HeaderTitle title="Сканирование" /></View>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-end' }}
+						></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
-					<ScrollView style={{ padding: 20, paddingTop: 0, marginBottom: 120}}>
+					<ScrollView style={{ padding: 20, paddingTop: 0, marginBottom: 140}}>
 						<View
 							style={{
 								width: width / 1.4,

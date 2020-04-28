@@ -43,28 +43,34 @@ export default class ReviewVoice extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
 						<TouchableOpacity
-							onPress={this.hideDrawer}
-							style={{ width: 50, height: 50, bottom: 10, paddingRight: 20 }}
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
 						>
-							<NavIcon onPress={this.hideDrawer} />
+							<BackIcon />
 						</TouchableOpacity>
-					}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
 						</TouchableOpacity>
-					}
-				/>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -110,7 +116,7 @@ export default class ReviewVoice extends React.Component {
 							<TextBlock title="Оценка" text="4.7 из 5.0" />
 							<TextBlock title="Дата" text="03 апреля 2020  19:45" />
 							<TextBlock title="Отзыв" />
-							<View style={{ flexDirection: 'row', marginTop:-20 }}>
+							<View style={{ flexDirection: 'row', marginTop: -20 }}>
 								<View
 									style={{
 										flex: 1,
@@ -136,11 +142,9 @@ export default class ReviewVoice extends React.Component {
 										paddingVertical: 5,
 									}}
 								>
-									<View style={{ flexDirection: 'row', marginBottom:-10 }}>
+									<View style={{ flexDirection: 'row', marginBottom: -10 }}>
 										<View style={{ flex: 1 }}>
-											<Text style={{ color: '#fff', fontSize: 11, fontWeight: '600' }}>
-												0:00
-											</Text>
+											<Text style={{ color: '#fff', fontSize: 11, fontWeight: '600' }}>0:00</Text>
 										</View>
 										<View style={{ flex: 1 }}>
 											<Text
@@ -171,7 +175,7 @@ export default class ReviewVoice extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',

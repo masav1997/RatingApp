@@ -19,24 +19,34 @@ export default class About extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					center={
-						<View style={{ marginBottom: 10 }}>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon />
+						</TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center' }}>
 							<HeaderTitle title="О приложении" />
 						</View>
-					}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
-						</TouchableOpacity>
-					}
-				/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }}></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,

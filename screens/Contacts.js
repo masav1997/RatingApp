@@ -7,9 +7,7 @@ import {
 	Text,
 	Image,
 	TouchableOpacity,
-	TouchableHighlight
 } from 'react-native';
-import Header from '../components/Header';
 import NavIcon from '../components/NavIcon';
 import HeaderTitle from '../components/HeaderTitle';
 import SectionListModule from '../components/ContactList/SectionListContacts';
@@ -63,24 +61,32 @@ export default class Contacts extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={
-						<TouchableHighlight
-							onHideUnderlay={this.hideDrawer}
-							style={{ width: 50, height: 60 }}
-						>
-							<NavIcon onPress={this.hideDrawer} />
-						</TouchableHighlight>
-					}
-					center={<HeaderTitle title="Контакты" />}
-				/>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 35,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-start' }}></TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Контакты" />
+						</View>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }} onPress={this.hideDrawer}>
+							<NavIcon />
+						</TouchableOpacity>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -88,15 +94,15 @@ export default class Contacts extends React.Component {
 							justifyContent: 'flex-end',
 							paddingTop: 25,
 							padding: 15,
-							marginBottom: 50,
+							marginBottom: 100,
 						}}
 					>
-						<View style={{marginLeft:15, marginRight:15}}>
-						<SearchBlock
-							title="Поиск по телефону и имени"
-							filters={require('../assets/icons/filters.png')}
-							onPress={() => this.props.navigation.navigate('Filters')}
-						/>
+						<View style={{ marginLeft: 15, marginRight: 15 }}>
+							<SearchBlock
+								title="Поиск по телефону и имени"
+								filters={require('../assets/icons/filters.png')}
+								onPress={() => this.props.navigation.navigate('Filters')}
+							/>
 						</View>
 						<SectionListModule
 							ref={(s) => (this.sectionList = s)}
@@ -119,7 +125,7 @@ export default class Contacts extends React.Component {
 						style={{
 							height: height,
 							width: width / 1.5,
-							marginTop: Platform.OS === 'android' ? 0 : 20,
+							marginTop: 0,
 							marginBottom: 0,
 							marginLeft: width / 3,
 							backgroundColor: '#EDF1F9',

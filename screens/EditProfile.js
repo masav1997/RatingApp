@@ -30,20 +30,36 @@ export default class EditProfile extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					center={<HeaderTitle title="Основные данные" />}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon />
 						</TouchableOpacity>
-					}
-				/>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Основные данные" />
+						</View>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-end' }}
+						></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
@@ -153,8 +169,8 @@ export default class EditProfile extends React.Component {
 						<Choose title="Кинотеатр" />
 						<Choose title="Банк" />
 					</ScrollView>
-					<View style={{marginBottom:-30}}></View>
-					<Button buttonTitle="Сохранить" onPress={this.toggleModal}/>
+					<View style={{ marginBottom: -30 }}></View>
+					<Button buttonTitle="Сохранить" onPress={this.toggleModal} />
 				</Modal>
 			</View>
 		);

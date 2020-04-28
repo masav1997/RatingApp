@@ -72,15 +72,31 @@ export default class Map extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					right={<Text style={{ right: 20, fontSize: 11, color: '#FFF', textAlign:'center', width:100 }}>Применить</Text>}
-					center={<HeaderTitle title="Карта" />}
-					left={
-						<TouchableOpacity style={{ width: 50, height: 50, bottom: 10, paddingLeft: 20, }} onPress={() => this.props.navigation.goBack()}>
-								<BackIcon onPress={() => this.props.navigation.goBack()}/>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon />
 						</TouchableOpacity>
-					}
-				/>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<HeaderTitle title="Карта" />
+						</View>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-end' }}
+						></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 				<SafeAreaView>
 					<ImageBackground
 						resizeMode={'cover'}
@@ -92,7 +108,6 @@ export default class Map extends React.Component {
 						source={require('../assets/icons/maps.png')}
 						imageStyle={{
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,

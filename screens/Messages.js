@@ -32,58 +32,67 @@ export default class Messages extends React.Component {
 				}}
 			>
 				<StatusBar barStyle="light-content" />
-				<Header
-					center={
-						<View style={{ flexDirection: 'row' }}>
-							<View style={{ flex: 1, width: 33, height: 33, alignItems: 'center' }}>
-								<View style={{ width: 36, height: 36, backgroundColor: '#fff', borderRadius: 39 }}>
-									<Image
-										source={require('../assets/icons/avatar2.png')}
-										style={{ width: 30, height: 30, alignSelf: 'center', top: 3 }}
-									/>
+				<SafeAreaView>
+					<View
+						style={{
+							flexDirection: 'row',
+							width: width,
+							paddingHorizontal: 15,
+							justifyContent: 'center',
+							marginBottom: 20,
+							marginTop: 50,
+						}}
+					>
+						<TouchableOpacity
+							style={{ flex: 1, alignItems: 'flex-start' }}
+							onPress={() => this.props.navigation.goBack()}
+						>
+							<BackIcon />
+						</TouchableOpacity>
+						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
+							<View style={{ flexDirection: 'row' }}>
+								<View style={{ flex: 1, width: 33, height: 33, alignItems: 'center' }}>
+									<View style={{ width: 36, height: 36, backgroundColor: '#fff', borderRadius: 39 }}>
+										<Image
+											source={require('../assets/icons/avatar2.png')}
+											style={{ width: 30, height: 30, alignSelf: 'center', top: 3 }}
+										/>
+									</View>
+								</View>
+								<View style={{ flex: 1, marginLeft: -35, bottom: 3 }}>
+									<Text
+										style={{
+											textAlign: 'left',
+											fontSize: 16,
+											fontWeight: '700',
+											color: '#fff',
+											marginBottom: 7,
+										}}
+									>
+										Ada Perry
+									</Text>
+									<Text
+										style={{
+											textAlign: 'left',
+											fontSize: 16,
+											bottom: 10,
+											color: '#EDEDED',
+										}}
+									>
+										786-222-8410
+									</Text>
 								</View>
 							</View>
-							<View style={{ flex: 1, marginLeft: -35, bottom: 3 }}>
-								<Text
-									style={{
-										textAlign: 'left',
-										fontSize: 16,
-										fontWeight: '700',
-										color: '#fff',
-										marginBottom: 7,
-									}}
-								>
-									Ada Perry
-								</Text>
-								<Text
-									style={{
-										textAlign: 'left',
-										fontSize: 16,
-										bottom: 10,
-										color: '#EDEDED',
-									}}
-								>
-									786-222-8410
-								</Text>
-							</View>
 						</View>
-					}
-					left={
-						<TouchableHighlight
-							onHideUnderlay={() => this.props.navigation.goBack()}
-							style={{ width: 50, height: 60, left:20 }}
-						>
-							<BackIcon onPress={() => this.props.navigation.goBack()} />
-						</TouchableHighlight>
-					}
-				/>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }}></TouchableOpacity>
+					</View>
+				</SafeAreaView>
 
 				<SafeAreaView>
 					<View
 						style={{
 							backgroundColor: '#FFFFFF',
 							flex: 1,
-							marginTop: 60,
 							width: width,
 							height: height,
 							borderTopLeftRadius: 20,
