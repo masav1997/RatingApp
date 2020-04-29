@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-	View,
-	Dimensions,
-	SafeAreaView,
-	StatusBar,
-	Text,
-	Image,
-	TouchableOpacity,
-} from 'react-native';
+import { View, Dimensions, SafeAreaView, StatusBar, Text, Image, TouchableOpacity } from 'react-native';
 import NavIcon from '../components/NavIcon';
 import HeaderTitle from '../components/HeaderTitle';
 import SectionListModule from '../components/ContactList/SectionListContacts';
@@ -17,6 +9,12 @@ import Modal from 'react-native-modal';
 const { width, height } = Dimensions.get('window');
 
 export default class Contacts extends React.Component {
+	state = {
+		isModalVisible: false,
+	};
+	toggleModal = () => {
+		this.setState({ isModalVisible: !this.state.isModalVisible });
+	};
 	constructor(props) {
 		super(props);
 		let nameData = [
@@ -51,6 +49,7 @@ export default class Contacts extends React.Component {
 		this.setState({ isDrawerVisible: !this.state.isDrawerVisible });
 	};
 	render() {
+		const { onPress1, onPress2, onPress3, onPress4 } = this.props;
 		return (
 			<View
 				style={{
@@ -110,14 +109,108 @@ export default class Contacts extends React.Component {
 							sectionHeight={50}
 							initialNumToRender={this.state.dataArray.length}
 							showsVerticalScrollIndicator={false}
-							SectionListClickCallback={() => {
-								this.props.navigation.navigate('Messages');
+							onPress={() => {
+								this.props.navigation.navigate('ProfileCompany');
 							}}
-							onPress1={() => {
-								this.props.navigation.navigate('Messages');
-							}}
+							onPress1={this.toggleModal}
 							sectionHeaderTextStyle={{ color: '#9EA5B1', fontWeight: 'normal' }}
 						/>
+						{this.state.isModalVisible ? (
+							<Modal
+								isVisible={this.state.isModalVisible}
+								backdropOpacity={0}
+								onBackdropPress={this.toggleModal}
+							>
+								<View
+									style={{
+										backgroundColor: '#FFF',
+										height: 'auto',
+										width: width / 2.2,
+										alignSelf: 'flex-end',
+										marginBottom: 200,
+										elevation: 10,
+										borderRadius: 10,
+										padding: 15,
+										right: 5,
+									}}
+								>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={(onPress1, this.toggleModal)}
+									>
+										<View style={{ flex: 1 }}>
+											<Image
+												style={{ width: 15, height: 15 }}
+												source={require('../assets/icons/call.png')}
+											/>
+										</View>
+										<View style={{ flex: 3, fontSize: 14, color: '#0D1F3C', fontWeight: '600' }}>
+											<Text>Позвонить</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={()=>{this.toggleModal(), this.props.navigation.navigate('Messages');}}
+									>
+										<Image
+											style={{ width: 15, height: 15 }}
+											source={require('../assets/icons/chat.png')}
+										/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Написать</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={(onPress3, this.toggleModal)}
+									>
+										<Image
+											style={{ width: 15, height: 15 }}
+											source={require('../assets/icons/forward1.png')}
+										/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Поделиться</Text>
+										</View>
+									</TouchableOpacity>
+									<TouchableOpacity
+										style={{ flexDirection: 'row', marginBottom: 10 }}
+										onPress={()=>{this.toggleModal(), this.props.navigation.navigate('EditProfile');}}
+									>
+										<Image
+											style={{ width: 15, height: 15 }}
+											source={require('../assets/icons/edit.png')}
+										/>
+										<View
+											style={{
+												flex: 3,
+												fontSize: 14,
+												color: '#0D1F3C',
+												fontWeight: '600',
+												marginLeft: 15,
+											}}
+										>
+											<Text>Редактировать</Text>
+										</View>
+									</TouchableOpacity>
+								</View>
+							</Modal>
+						) : null}
 					</View>
 					<Modal
 						isVisible={this.state.isDrawerVisible}

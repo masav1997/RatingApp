@@ -83,9 +83,7 @@ export default class Filters extends React.Component {
 						<View style={{ flex: 6, alignItems: 'center', justifyContent: 'flex-end' }}>
 							<HeaderTitle title="Мои компании" />
 						</View>
-						<TouchableOpacity
-							style={{ flex: 1, alignItems: 'flex-end' }}
-						></TouchableOpacity>
+						<TouchableOpacity style={{ flex: 1, alignItems: 'flex-end' }}></TouchableOpacity>
 					</View>
 				</SafeAreaView>
 				<SafeAreaView>
@@ -105,8 +103,13 @@ export default class Filters extends React.Component {
 							<Multislider title="Средняя оценка на сервисе" />
 							<RadioList PROP={PROP} title="Категория" />
 							<View style={{ marginBottom: -40 }} />
-							<Button buttonTitle="Показать: 35" />
-							<View style={{ marginBottom: 80 }} />
+							<Button
+								buttonTitle="Показать: 35"
+								onPress={() => {
+									this.props.navigation.navigate('Search');
+								}}
+							/>
+							<View style={{ marginBottom: 120 }} />
 						</ScrollView>
 					</View>
 				</SafeAreaView>

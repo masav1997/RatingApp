@@ -174,7 +174,7 @@ export default class ProfileCompany extends React.Component {
 								color="#1CB703"
 							/>
 						</ScrollView>
-						<View style={{ flexDirection: 'row', position: 'absolute', paddingHorizontal: 15 }}>
+						<View style={{ flexDirection: 'row', position: 'absolute', paddingHorizontal: 15, bottom:50 }}>
 							<View style={{ flex: 5, marginRight: 5 }}>
 								<View
 									style={{
@@ -221,6 +221,9 @@ export default class ProfileCompany extends React.Component {
 											justifyContent: 'center',
 											alignItems: 'center',
 										}}
+										onPress={() => {
+											this.props.navigation.navigate('Scan');
+										}}
 									>
 										<Image
 											source={require('../assets/icons/qr.png')}
@@ -230,6 +233,7 @@ export default class ProfileCompany extends React.Component {
 								</View>
 							</View>
 						</View>
+						<View style={{marginBottom: 120}}/>
 					</View>
 				</SafeAreaView>
 				<Modal

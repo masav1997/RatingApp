@@ -6,11 +6,9 @@ import {
 	StatusBar,
 	ScrollView,
 	Text,
-	TouchableHighlight,
+	TouchableOpacity,
 	Image,
-	TextInput,
 } from 'react-native';
-import Header from '../components/Header';
 import BackIcon from '../components/BackIcon';
 import MessageBlock from '../components/MessageBlock';
 import MessageBlock1 from '../components/MessageBlock1';

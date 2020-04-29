@@ -132,7 +132,10 @@ export default class App extends React.Component {
 						<Stack.Screen name="ReviewCompany" component={ReviewCompany} />
 						<Stack.Screen name="Map" component={Map} />
 						<Stack.Screen name="SectionItem" component={SectionListModule} />
-						<Stack.Screen name="CheckList">
+						<Stack.Screen name="EditProfile" component={EditProfile} />
+						<Stack.Screen name="CheckList" component={CheckList} />
+						<Stack.Screen name="Profile" component={Profile} />
+						<Stack.Screen name="Scan">
 							{() => (
 								<Tab.Navigator
 									screenOptions={({ route }) => ({

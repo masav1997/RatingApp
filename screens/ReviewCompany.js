@@ -210,6 +210,9 @@ export default class ReviewCompany extends React.Component {
 											justifyContent: 'center',
 											alignItems: 'center',
 										}}
+										onPress={() => {
+											this.props.navigation.navigate('Scan');
+										}}
 									>
 										<Image
 											source={require('../assets/icons/qr.png')}

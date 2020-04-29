@@ -6,13 +6,10 @@ import {
 	Text,
 	ViewPropTypes,
 	Image,
-	Dimensions,
 	TouchableWithoutFeedback,
 	SectionList,
 } from 'react-native';
-import Modal from 'react-native-modal';
 
-const { width, height } = Dimensions.get('window');
 import { makePy } from './getFirstAlphabet';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -193,126 +190,23 @@ export default class SectionListModule extends Component {
 }
 
 export class SectionItem extends PureComponent {
-	state = {
-		isModalVisible: false,
-	};
-	toggleModal = () => {
-		this.setState({ isModalVisible: !this.state.isModalVisible });
-	};
 	render() {
-		const { onPress1, onPress2, onPress3, onPress4 } = this.props;
+		const { onPress, onPress1 } = this.props;
 		return (
-			<TouchableWithoutFeedback onPress={this.toggleModal}>
-				<View style={styles.itemStyle}>
-					<View style={{ flex: 1 }}>
-						<Image style={{ width: 40, height: 40, marginRight: 10 }} source={this.props.item.avatar} />
-					</View>
-					<View style={{ flex: 4 }}>
+			<View style={styles.itemStyle}>
+				<View style={{ flex: 1 }}>
+					<Image style={{ width: 40, height: 40, marginRight: 10 }} source={this.props.item.avatar} />
+				</View>
+				<View style={{ flex: 4 }}>
+					<TouchableOpacity onPress={onPress}>
 						<Text style={styles.artistText}>{this.props.item.name}</Text>
 						<Text style={styles.sectionItemCountStyle}>{this.props.item.count}</Text>
-					</View>
-					{this.state.isModalVisible ? (
-						<Modal
-							isVisible={this.state.isModalVisible}
-							backdropOpacity={0}
-							onBackdropPress={this.toggleModal}
-						>
-							<View
-								style={{
-									backgroundColor: '#FFF',
-									height: 'auto',
-									width: width / 2.2,
-									alignSelf: 'flex-end',
-									marginBottom: 200,
-									elevation: 10,
-									borderRadius: 10,
-									padding: 15,
-									right: 5
-								}}
-							>
-								<TouchableOpacity
-									style={{ flexDirection: 'row', marginBottom: 10 }}
-									onPress={(onPress1, this.toggleModal)}
-								>
-									<View style={{ flex: 1 }}>
-										<Image
-											style={{ width: 15, height: 15 }}
-											source={require('../../assets/icons/call.png')}
-										/>
-									</View>
-									<View style={{ flex: 3, fontSize: 14, color: '#0D1F3C', fontWeight: '600' }}>
-										<Text>Позвонить</Text>
-									</View>
-								</TouchableOpacity>
-								<TouchableOpacity
-									style={{ flexDirection: 'row', marginBottom: 10 }}
-									onPress={(onPress2, this.toggleModal)}
-								>
-									<Image
-										style={{ width: 15, height: 15 }}
-										source={require('../../assets/icons/chat.png')}
-									/>
-									<View
-										style={{
-											flex: 3,
-											fontSize: 14,
-											color: '#0D1F3C',
-											fontWeight: '600',
-											marginLeft: 15,
-										}}
-									>
-										<Text>Написать</Text>
-									</View>
-								</TouchableOpacity>
-								<TouchableOpacity
-									style={{ flexDirection: 'row', marginBottom: 10 }}
-									onPress={(onPress3, this.toggleModal)}
-								>
-									<Image
-										style={{ width: 15, height: 15 }}
-										source={require('../../assets/icons/forward1.png')}
-									/>
-									<View
-										style={{
-											flex: 3,
-											fontSize: 14,
-											color: '#0D1F3C',
-											fontWeight: '600',
-											marginLeft: 15,
-										}}
-									>
-										<Text>Поделиться</Text>
-									</View>
-								</TouchableOpacity>
-								<TouchableOpacity
-									style={{ flexDirection: 'row', marginBottom: 10 }}
-									onPress={(onPress4, this.toggleModal)}
-								>
-									<Image
-										style={{ width: 15, height: 15 }}
-										source={require('../../assets/icons/edit.png')}
-									/>
-									<View
-										style={{
-											flex: 3,
-											fontSize: 14,
-											color: '#0D1F3C',
-											fontWeight: '600',
-											marginLeft: 15,
-										}}
-									>
-										<Text>Редактировать</Text>
-									</View>
-								</TouchableOpacity>
-							</View>
-						</Modal>
-					) : (
-						<TouchableOpacity style={{ flex: 1, justifyContent: 'center' }}>
-							<Image style={{ width: 15, height: 15 }} source={require('../../assets/icons/dots.png')} />
-						</TouchableOpacity>
-					)}
+					</TouchableOpacity>
 				</View>
-			</TouchableWithoutFeedback>
+				<TouchableOpacity style={{ flex: 1, justifyContent: 'center' }} onPress={onPress1}>
+					<Image style={{ width: 15, height: 15 }} source={require('../../assets/icons/dots.png')} />
+				</TouchableOpacity>
+			</View>
 		);
 	}
 }
